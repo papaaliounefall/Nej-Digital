@@ -165,7 +165,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     bio: 'Cofondateur de NEJ Digital, il coordonne les activités administratives et organisationnelles de la structure tout en concevant et développant ses solutions numériques.',
     location: 'Dakar, Sénégal',
     photoUrl: '/papa-alioune-fall.webp',
-    linkedinUrl: 'https://linkedin.com/in/papaaliounefall',
+    linkedinUrl: 'https://www.linkedin.com/in/papa-alioune-fall-03a1b2377/',
     githubUrl: 'https://github.com/papaaliounefall',
     specialty: 'Software Engineer'
   },
@@ -176,9 +176,8 @@ export const TEAM_MEMBERS: TeamMember[] = [
     bio: 'Responsable Communication de NEJ Digitale, également active sur le développement des produits.',
     location: 'Dakar, Sénégal',
     photoUrl: '/anifa-djite.webp',
-    // TODO: renseigner les vraies URLs
-    linkedinUrl: '',
-    githubUrl: '',
+    linkedinUrl: 'https://www.linkedin.com/in/anifa-djitté-7673a5350',
+    githubUrl: 'https://github.com/anifa2003',
     specialty: 'Développeuse Full Stack'
   },
   {
