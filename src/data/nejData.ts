@@ -161,7 +161,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
   {
     name: 'Papa Alioune Fall',
     role: 'Cofondateur & Secrétaire Général',
-    secondaryRole: 'Lead Developer',
+    secondaryRole: 'Software Engineer',
     bio: 'Cofondateur de NEJ Digital, il coordonne les activités administratives et organisationnelles de la structure tout en concevant et développant ses solutions numériques.',
     location: 'Dakar, Sénégal',
     photoUrl: '/papa-alioune-fall.webp',
@@ -172,11 +172,11 @@ export const TEAM_MEMBERS: TeamMember[] = [
   {
     name: 'Anifa Djité',
     role: 'Responsable Communication',
-    secondaryRole: 'Lead Developer',
+    secondaryRole: 'Developer',
     bio: 'Responsable Communication de NEJ Digitale, également active sur le développement frontend des produits.',
     location: 'Dakar, Sénégal',
     photoUrl: '/anifa-djite.webp',
-    specialty: 'Communication & Développement Frontend'
+    specialty: 'Full Stack'
   },
   {
     name: 'Amadou Sow',
