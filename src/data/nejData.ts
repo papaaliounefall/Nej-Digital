@@ -160,13 +160,14 @@ export const DNA_VALUES: DnaValue[] = [
 export const TEAM_MEMBERS: TeamMember[] = [
   {
     name: 'Papa Alioune Fall',
-    role: 'Secrétaire Général',
-    bio: 'Secrétaire Général de NEJ Digitale, en charge du développement backend et mobile des produits de l\'écosystème.',
+    role: 'Cofondateur & Secrétaire Général',
+    secondaryRole: 'Lead Developer',
+    bio: 'Cofondateur de NEJ Digital, il coordonne les activités administratives et organisationnelles de la structure tout en concevant et développant ses solutions numériques.',
     location: 'Dakar, Sénégal',
     photoUrl: '/papa-alioune-fall.webp',
     linkedinUrl: 'https://linkedin.com/in/papaaliounefall',
     githubUrl: 'https://github.com/papaaliounefall',
-    specialty: 'Développement Backend & Mobile'
+    specialty: 'Développeur Full Stack'
   },
   {
     name: 'Anifa Djité',

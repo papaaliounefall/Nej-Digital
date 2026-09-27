@@ -52,8 +52,15 @@ export const TeamSection: React.FC = () => {
                     {member.name}
                   </h3>
 
-                  <div className="text-xs font-mono text-[#3B82F6] font-bold mb-3 mt-0.5 uppercase tracking-wider">
-                    {member.role}
+                  <div className="mb-3 mt-0.5">
+                    <div className="text-xs font-mono text-[#3B82F6] font-bold uppercase tracking-wider">
+                      {member.role}
+                    </div>
+                    {member.secondaryRole && (
+                      <div className="text-[11px] font-mono text-[#6B7280] uppercase tracking-wider mt-0.5">
+                        {member.secondaryRole}
+                      </div>
+                    )}
                   </div>
 
                   <p className="text-xs text-[#9CA3AF] leading-relaxed mb-4">
