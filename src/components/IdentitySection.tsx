@@ -7,16 +7,12 @@ import {
 import { SectionKicker } from './SectionKicker';
 import { PHILOSOPHY_PILLARS, DNA_VALUES } from '../data/nejData';
 
-interface IdentitySectionProps {
-  onOpenProjectModal: () => void;
-}
-
 const METHOD_ICONS = [Eye, Lightbulb, Hammer, RefreshCw];
 const DNA_ICONS = [Flame, Sparkles, Activity, ShieldAlert, Rocket];
 
 /** Merged Positionnement + Philosophie + ADN + Vision into one identity section
  * to cut redundant "who we are" storytelling before reaching Réalisations. */
-export const IdentitySection: React.FC<IdentitySectionProps> = ({ onOpenProjectModal }) => {
+export const IdentitySection: React.FC = () => {
   const pillars = [
     {
       icon: Target,
@@ -49,9 +45,9 @@ export const IdentitySection: React.FC<IdentitySectionProps> = ({ onOpenProjectM
         <div className="max-w-3xl mb-16">
           <SectionKicker label="Notre positionnement stratégique" />
 
-          <h2 className="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-[#F9FAFB] tracking-tight leading-[1.08] mb-6">
+          <h1 className="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-[#F9FAFB] tracking-tight leading-[1.08] mb-6">
             Une nouvelle génération construit déjà son avenir.
-          </h2>
+          </h1>
 
           <div className="space-y-4 text-base sm:text-lg text-[#9CA3AF] font-normal leading-relaxed border-l-2 border-[#3B82F6] pl-6">
             <p>
@@ -149,21 +145,21 @@ export const IdentitySection: React.FC<IdentitySectionProps> = ({ onOpenProjectM
 
         {/* Closing Manifesto + Single CTA (ex-Vision) */}
         <div className="text-center max-w-3xl mx-auto">
-          <h3 className="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight leading-[1.08] mb-6">
+          <h2 className="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight leading-[1.08] mb-6">
             Une nouvelle ère pour une nouvelle génération.
-          </h3>
+          </h2>
           <p className="text-base sm:text-lg text-[#9CA3AF] leading-relaxed mb-10">
             NEJ Digitale veut contribuer à faire émerger une génération africaine capable de{' '}
             <span className="text-white font-semibold">concevoir, développer et déployer</span>{' '}
             les technologies qui façonneront son avenir.
           </p>
-          <button
-            onClick={onOpenProjectModal}
+          <a
+            href="/contact/"
             className="px-8 py-4 bg-[#3B82F6] text-white hover:bg-[#2563EB] font-bold text-sm tracking-wide uppercase inline-flex items-center gap-2 active:scale-95 transition-all shadow-xl cursor-pointer"
           >
             <span>Rejoindre la dynamique</span>
             <ArrowRight className="w-4 h-4" />
-          </button>
+          </a>
         </div>
 
       </div>

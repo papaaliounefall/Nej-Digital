@@ -2,9 +2,7 @@ import {
   Product,
   PhilosophyPillar,
   DnaValue,
-  TechCapability,
-  TeamMember,
-  CaseStudy
+  TeamMember
 } from '../types';
 
 export const PRODUCTS: Product[] = [
@@ -34,7 +32,7 @@ export const PRODUCTS: Product[] = [
     ],
     status: 'Déploiement',
     targetAudience: 'Boutiques, commerçants et artisans sénégalais, acheteurs en ligne',
-    imageUrl: '/SunuMall.png'
+    imageUrl: '/SunuMall.webp'
   },
   {
     id: 'orientasn',
@@ -61,7 +59,7 @@ export const PRODUCTS: Product[] = [
     ],
     status: 'Déploiement',
     targetAudience: 'Bacheliers, lycéens, établissements scolaires et universitaires',
-    imageUrl: '/Orientasn.png'
+    imageUrl: '/Orientasn.webp'
   },
   {
     id: 'agrimarket',
@@ -88,7 +86,7 @@ export const PRODUCTS: Product[] = [
     ],
     status: 'Déploiement',
     targetAudience: 'Producteurs, coopératives, transporteurs et acheteurs de gros',
-    imageUrl: '/AgriMarket.png'
+    imageUrl: '/AgriMarket.webp'
   },
   {
     id: 'hadrasmart',
@@ -115,7 +113,7 @@ export const PRODUCTS: Product[] = [
     ],
     status: 'Production',
     targetAudience: 'Pèlerins, familles religieuses et comité d\'organisation (COSKAS)',
-    imageUrl: '/HadraSmart.png'
+    imageUrl: '/HadraSmart.webp'
   },
   {
     id: 'minifoot',
@@ -142,7 +140,7 @@ export const PRODUCTS: Product[] = [
     ],
     status: 'Déploiement',
     targetAudience: 'Joueurs amateurs, organisateurs de matchs, propriétaires de terrains synthétiques',
-    imageUrl: '/minifoot.png'
+    imageUrl: '/minifoot.webp'
   },
   {
     id: 'sunucar',
@@ -169,7 +167,7 @@ export const PRODUCTS: Product[] = [
     ],
     status: 'Beta Active',
     targetAudience: 'Propriétaires de véhicules, loueurs professionnels, particuliers',
-    imageUrl: '/sunucar.png'
+    imageUrl: '/sunucar.webp'
   }
 ];
 
@@ -237,57 +235,8 @@ export const DNA_VALUES: DnaValue[] = [
   }
 ];
 
-export const TECH_CAPABILITIES: TechCapability[] = [
-  {
-    title: 'Web & Applications Réactives',
-    category: 'Frontend & Expérience',
-    description: 'Interfaces ultra-rapides, PWA légères optimisées pour les connexions 3G/4G, accessibilité universelle et fluidité maximale.',
-    tools: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'PWA']
-  },
-  {
-    title: 'Mobile Natif & Hybride',
-    category: 'Applications Mobiles',
-    description: 'Applications fluides fonctionnant offline-first avec synchronisation automatique dès retour du réseau.',
-    tools: ['React Native', 'Flutter', 'Offline-First Storage', 'SQLite']
-  },
-  {
-    title: 'Cloud & Systèmes Distribués',
-    category: 'Infrastructures & Résilience',
-    description: 'Architectures résilientes, auto-scalables, hébergées sur des infrastructures sécurisées à haute disponibilité.',
-    tools: ['Cloud Run', 'PostgreSQL', 'Redis', 'Docker', 'Microservices']
-  },
-  {
-    title: 'Data & Architecture de Données',
-    category: 'Analytique & Décision',
-    description: 'Pipelines d\'ingestion de données temps réel pour la traçabilité des stocks, scoring de crédit et tableaux de bord décisionnels.',
-    tools: ['PostGIS', 'ClickHouse', 'Pipelines ETL', 'Apache Kafka']
-  },
-  {
-    title: 'Intelligence Artificielle Ciblée',
-    category: 'IA Pragmatique',
-    description: 'Modèles d\'IA légers et spécialisés au service exclusif de la recommandation de filières, du scoring de paiement et de l\'analyse agronomique.',
-    tools: ['Traitement NLP', 'Systèmes de recommandation', 'Vision par ordinateur', 'Gemini APIs']
-  },
-  {
-    title: 'APIs & Passerelles Financières',
-    category: 'Interconnexion & Paiements',
-    description: 'Intégrations robustes avec les opérateurs de mobile money, banques régionales, opérateurs télécoms et réseaux logistiques.',
-    tools: ['Wave API', 'Orange Money API', 'WhatsApp Cloud API', 'Webhooks']
-  },
-  {
-    title: 'Infrastructure & Sécurité',
-    category: 'DevSecOps & Souveraineté',
-    description: 'Chiffrement de bout en bout, conformité RGPD / CDP Sénégal sur la protection des données à caractère personnel et audits de sécurité continus.',
-    tools: ['Chiffrement AES-256', 'OAuth2 / JWT', 'Monitoring 24/7', 'CI/CD automatisé']
-  },
-  {
-    title: 'Automatisation des Processus',
-    category: 'Productivité Métier',
-    description: 'Suppression des tâches répétitives manuelles pour les commerçants, agriculteurs et gestionnaires d\'entreprises.',
-    tools: ['Workflows Serverless', 'Rappels automatiques SMS/WhatsApp', 'Rapprochement bancaire']
-  }
-];
-
+// photoUrl values are Unsplash stock placeholders — replace with real team
+// photos before pushing traffic to the site (see /equipe/ page).
 export const TEAM_MEMBERS: TeamMember[] = [
   {
     name: 'Papa Alioune Fall',
@@ -328,124 +277,3 @@ export const TEAM_MEMBERS: TeamMember[] = [
     specialty: 'Design System & Recherche utilisateur terrain'
   }
 ];
-
-export const REALISATIONS: CaseStudy[] = [
-  {
-    id: 'sunumall-case',
-    productName: 'SunuMall',
-    sector: 'Commerce Digital',
-    tag: 'Marketplace nationale',
-    clientType: 'Boutiques et marchands sénégalais',
-    timeline: 'En déploiement · 2026',
-    summary: 'Une marketplace unique pour retrouver des milliers de boutiques sénégalaises, avec paiement mobile intégré et livraison suivie.',
-    results: [
-      'Paiement Wave, Orange Money et carte bancaire natif',
-      'Recherche par catégorie et par boutique',
-      'Support client disponible 24/7'
-    ],
-    imageUrl: '/SunuMall.png'
-  },
-  {
-    id: 'orientasn-case',
-    productName: 'OrientaSn',
-    sector: 'EdTech',
-    tag: 'Plateforme nationale d\'orientation',
-    clientType: 'Bacheliers et établissements',
-    timeline: 'En déploiement · 2026',
-    summary: 'Plateforme d\'orientation post-bac qui structure le parcours de chaque bachelier, du test de profil à la mise en relation avec des conseillers certifiés.',
-    results: [
-      'Test d\'orientation basé sur le profil de l\'élève',
-      'Parcours dédiés bachelier et établissement',
-      'Accompagnement par des conseillers certifiés'
-    ],
-    imageUrl: '/Orientasn.png'
-  },
-  {
-    id: 'agrimarket-case',
-    productName: 'AgriMarket',
-    sector: 'AgriTech',
-    tag: 'Bourse agricole directe',
-    clientType: 'Producteurs et coopératives',
-    timeline: 'En déploiement · 2026',
-    summary: 'Plateforme connectant producteurs et marchés sur les grands terroirs agricoles du Sénégal, avec cours en temps réel et paiement sécurisé.',
-    results: [
-      'Cours des denrées agricoles en temps réel',
-      'Paiement sécurisé par séquestre mobile money',
-      'Réseau de transporteurs certifiés et géolocalisés'
-    ],
-    imageUrl: '/AgriMarket.png'
-  },
-  {
-    id: 'hadrasmart-case',
-    productName: 'HadraSmart',
-    sector: 'Ville intelligente',
-    tag: 'Coordination événementielle',
-    clientType: 'Comité d\'organisation de la Hadra (COSKAS)',
-    timeline: 'Déployé · Tivaouane',
-    summary: 'Plateforme officielle de coordination et d\'information pour le grand rassemblement religieux de Tivaouane.',
-    results: [
-      '240 000+ pèlerins connectés',
-      'Prise en charge des demandes en moins de 3 minutes',
-      'Informations disponibles en français, wolof et arabe'
-    ],
-    imageUrl: '/HadraSmart.png'
-  },
-  {
-    id: 'minifoot-case',
-    productName: 'MiniFoot',
-    sector: 'Sport & Loisirs',
-    tag: 'Réservation de terrains',
-    clientType: 'Joueurs et gestionnaires de terrains',
-    timeline: 'En déploiement · Dakar',
-    summary: 'Réservation en ligne de terrains de foot synthétiques à Dakar, avec disponibilité en temps réel.',
-    results: [
-      'Disponibilité des terrains en temps réel',
-      'Réservation instantanée en ligne',
-      'Tableau de bord dédié aux gestionnaires de terrains'
-    ],
-    imageUrl: '/minifoot.png'
-  },
-  {
-    id: 'sunucar-case',
-    productName: 'SunuCar',
-    sector: 'Mobilité',
-    tag: 'Location de véhicules',
-    clientType: 'Propriétaires et loueurs de véhicules',
-    timeline: 'Version bêta · 2026',
-    summary: 'Plateforme de location et de gestion de flotte de véhicules, avec vérification d\'identité intégrée.',
-    results: [
-      'Vérification KYC intégrée à chaque location',
-      'Paiement direct Wave et Orange Money',
-      'Essai gratuit de 14 jours pour les propriétaires'
-    ],
-    imageUrl: '/sunucar.png'
-  }
-];
-
-export const AI_PHILOSOPHY = {
-  title: 'L\'intelligence, quand elle apporte réellement quelque chose.',
-  statement: 'L\'intelligence artificielle fait partie de notre boîte à outils. Nous l\'utilisons lorsqu\'elle permet de mieux comprendre, recommander, automatiser ou décider.',
-  corePrinciple: 'Nous refusons l\'IA décorative. Chaque algorithme embarqué dans un produit NEJ Digitale répond à un besoin fonctionnel mesurable.',
-  useCases: [
-    {
-      domain: 'OrientaSn',
-      title: 'Moteur de recommandation académique affinitaire',
-      description: 'Analyse multidimensionnelle des aptitudes, notes et aspirations de l\'élève pour proposer les 3 filières d\'études aux meilleures chances de réussite et d\'insertion.'
-    },
-    {
-      domain: 'HadraSmart',
-      title: 'Assistant conversationnel officiel',
-      description: 'Répond aux questions des pèlerins en français, wolof et arabe à partir des seules sources validées par le comité d\'organisation, sans improvisation ni information non vérifiée.'
-    },
-    {
-      domain: 'AgriMarket',
-      title: 'Prévision de la demande & stabilisation des cours',
-      description: 'Modélisation des cycles de récoltes et des pics de consommation urbaine pour éviter les pénuries ou les effondrements de prix sur les marchés locaux.'
-    },
-    {
-      domain: 'SunuMall',
-      title: 'Catégorisation & optimisation des fiches produits',
-      description: 'Génération instantanée de descriptions claires et de tags de recherche à partir d\'une simple photo prise par le commerçant sur son smartphone.'
-    }
-  ]
-};

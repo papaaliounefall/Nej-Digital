@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, Menu, X } from 'lucide-react';
 
-interface NavbarProps {
-  onOpenProjectModal: () => void;
-}
+const navLinks = [
+  { label: 'Accueil', href: '/' },
+  { label: 'À propos', href: '/a-propos/' },
+  { label: 'Nos services', href: '/services/' },
+  { label: 'Nos projets', href: '/projets/' },
+  { label: 'Notre équipe', href: '/equipe/' },
+  { label: 'Actualités', href: '/actualites/' },
+];
 
-export const Navbar: React.FC<NavbarProps> = ({
-  onOpenProjectModal
-}) => {
+export const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -18,17 +21,6 @@ export const Navbar: React.FC<NavbarProps> = ({
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  // Kept to the essentials: at xl the row (logo + links + CTA) has ~1216px to work
-  // with inside max-w-7xl, so the full 8-link version used to force-wrap the CTA button
-  // off-screen. Philosophie/ADN/Afrique remain reachable from the footer.
-  const navLinks = [
-    { label: 'Solutions', href: '#solutions' },
-    { label: 'Positionnement', href: '#positionnement' },
-    { label: 'Technologies', href: '#technologies' },
-    { label: 'Réalisations', href: '#realisations' },
-    { label: 'Équipe', href: '#equipe' },
-  ];
 
   return (
     <header
@@ -42,8 +34,8 @@ export const Navbar: React.FC<NavbarProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Brand Logo & Tag */}
-          <a href="#" className="flex items-center gap-3 group">
-            <img src="/logo-nej.png" alt="NEJ Digitale" className="h-9 w-auto" />
+          <a href="/" className="flex items-center gap-3 group">
+            <img src="/logo-nej.webp" alt="NEJ Digitale" className="h-9 w-auto" width={36} height={36} />
             <span className="hidden sm:inline font-display font-black text-sm tracking-tight text-[#F9FAFB] group-hover:text-[#3B82F6] transition-colors uppercase">
               Nouvelle ère de la jeunesse
             </span>
@@ -63,27 +55,26 @@ export const Navbar: React.FC<NavbarProps> = ({
             ))}
           </nav>
 
-          {/* Right Area: Project CTA */}
+          {/* Right Area: Contact CTA */}
           <div className="hidden xl:flex items-center gap-3">
-            {/* Main Action Button */}
-            <button
+            <a
               id="nav-cta-button"
-              onClick={onOpenProjectModal}
-              className="inline-flex items-center gap-2 whitespace-nowrap px-4 2xl:px-5 py-2.5 bg-[#3B82F6] text-white hover:bg-blue-600 font-bold text-xs uppercase tracking-wide 2xl:tracking-widest transition-all active:scale-[0.98] cursor-pointer shadow-lg shadow-blue-500/10"
+              href="/contact/"
+              className="inline-flex items-center gap-2 whitespace-nowrap px-4 2xl:px-5 py-2.5 bg-[#3B82F6] text-white hover:bg-blue-600 font-bold text-xs uppercase tracking-wide 2xl:tracking-widest transition-all active:scale-[0.98] shadow-lg shadow-blue-500/10"
             >
-              <span>Parlons de votre projet</span>
+              <span>Nous contacter</span>
               <ArrowRight className="w-3.5 h-3.5" />
-            </button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
           <div className="flex items-center gap-2 xl:hidden">
-            <button
-              onClick={onOpenProjectModal}
+            <a
+              href="/contact/"
               className="px-3 py-1.5 bg-[#3B82F6] text-white font-bold text-xs uppercase tracking-wider transition-all"
             >
-              Projet
-            </button>
+              Contact
+            </a>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 bg-[#111827] border border-[#1F2937] text-[#9CA3AF] hover:text-white"
@@ -110,16 +101,13 @@ export const Navbar: React.FC<NavbarProps> = ({
               </a>
             ))}
             <div className="pt-2 flex flex-col gap-2">
-              <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  onOpenProjectModal();
-                }}
+              <a
+                href="/contact/"
                 className="w-full mt-2 py-3 bg-[#3B82F6] text-white font-bold text-xs uppercase tracking-widest text-center flex items-center justify-center gap-2"
               >
-                <span>Parlons de votre projet</span>
+                <span>Nous contacter</span>
                 <ArrowRight className="w-4 h-4" />
-              </button>
+              </a>
             </div>
           </div>
         </div>

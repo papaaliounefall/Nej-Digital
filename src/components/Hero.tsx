@@ -4,10 +4,6 @@ import { isWebGLAvailable } from '../lib/webgl';
 
 const HeroGlobe = lazy(() => import('./hero/HeroGlobe').then((m) => ({ default: m.HeroGlobe })));
 
-interface HeroProps {
-  onOpenProjectModal: () => void;
-}
-
 /** Soft static glow — used while the globe loads, and as the permanent fallback without WebGL. */
 const GlobeFallback: React.FC = () => (
   <div className="w-full h-full flex items-center justify-center">
@@ -20,7 +16,7 @@ const GlobeFallback: React.FC = () => (
   </div>
 );
 
-export const Hero: React.FC<HeroProps> = ({ onOpenProjectModal }) => {
+export const Hero: React.FC = () => {
   const [canRenderGlobe, setCanRenderGlobe] = useState(false);
 
   useEffect(() => {
@@ -57,23 +53,23 @@ export const Hero: React.FC<HeroProps> = ({ onOpenProjectModal }) => {
 
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-10">
               <a
-                id="hero-cta-solutions"
-                href="#solutions"
+                id="hero-cta-projects"
+                href="#projets-preview"
                 className="bg-[#3B82F6] text-white px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-blue-600 transition-all text-center inline-flex items-center justify-center gap-3 active:scale-95 shadow-lg shadow-blue-500/10"
               >
-                <span>Découvrir nos solutions</span>
+                <span>Découvrir nos projets</span>
                 <ArrowRight className="w-4 h-4" />
               </a>
 
-              <button
-                id="hero-cta-project"
-                onClick={onOpenProjectModal}
+              <a
+                id="hero-cta-contact"
+                href="/contact/"
                 className="border px-8 py-4 text-xs font-bold uppercase tracking-widest transition-all text-center inline-flex items-center justify-center gap-2 cursor-pointer hover:bg-white/5"
                 style={{ borderColor: '#252B3A', color: '#F5F5F2' }}
               >
                 <span>Parlons de votre projet</span>
                 <ArrowUpRight className="w-4 h-4" style={{ color: '#9CA3AF' }} />
-              </button>
+              </a>
             </div>
 
             {/* Micro Pillars */}

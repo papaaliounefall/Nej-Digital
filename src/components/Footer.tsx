@@ -2,17 +2,12 @@ import React, { useState } from 'react';
 import { Linkedin, Instagram, Facebook, Twitter, Github, ArrowUp, X } from 'lucide-react';
 import { useModalDismiss } from '../hooks/useModalDismiss';
 
-interface FooterProps {
-  onOpenProjectModal: () => void;
-}
-
 interface FooterLink {
   label: string;
-  href?: string;
-  action?: 'project-modal';
+  href: string;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onOpenProjectModal }) => {
+export const Footer: React.FC = () => {
   const [legalModalOpen, setLegalModalOpen] = useState(false);
   const [privacyModalOpen, setPrivacyModalOpen] = useState(false);
 
@@ -27,34 +22,27 @@ export const Footer: React.FC<FooterProps> = ({ onOpenProjectModal }) => {
     {
       title: 'Écosystème',
       links: [
-        { label: 'SunuMall (Commerce)', href: '#solutions' },
-        { label: 'OrientaSn (Éducation)', href: '#solutions' },
-        { label: 'AgriMarket (Agriculture)', href: '#solutions' },
-        { label: 'HadraSmart (Ville intelligente)', href: '#solutions' },
-        { label: 'MiniFoot (Sport)', href: '#solutions' },
-        { label: 'SunuCar (Mobilité)', href: '#solutions' },
+        { label: 'SunuMall (Commerce)', href: '/projets/' },
+        { label: 'OrientaSn (Éducation)', href: '/projets/' },
+        { label: 'AgriMarket (Agriculture)', href: '/projets/' },
+        { label: 'HadraSmart (Ville intelligente)', href: '/projets/' },
+        { label: 'MiniFoot (Sport)', href: '/projets/' },
+        { label: 'SunuCar (Mobilité)', href: '/projets/' },
       ]
     },
     {
       title: 'Entreprise',
       links: [
-        { label: 'Positionnement & Vision', href: '#positionnement' },
-        { label: 'Équipe & Talents', href: '#equipe' },
-      ]
-    },
-    {
-      title: 'Technologies',
-      links: [
-        { label: 'Architecture Cloud', href: '#technologies' },
-        { label: 'IA Pragmatique', href: '#ia' },
-        { label: 'Expansion Afrique', href: '#afrique' },
-        { label: 'Études de cas', href: '#realisations' },
+        { label: 'À propos & Vision', href: '/a-propos/' },
+        { label: 'Nos services', href: '/services/' },
+        { label: 'Équipe & Talents', href: '/equipe/' },
+        { label: 'Actualités', href: '/actualites/' },
       ]
     },
     {
       title: 'Ressources & Contact',
       links: [
-        { label: 'Démarrer un projet', action: 'project-modal' },
+        { label: 'Nous contacter', href: '/contact/' },
         { label: 'nejdigital0@gmail.com', href: 'mailto:nejdigital0@gmail.com' },
       ]
     }
@@ -63,14 +51,14 @@ export const Footer: React.FC<FooterProps> = ({ onOpenProjectModal }) => {
   return (
     <footer className="bg-[#0A0B0E] border-t border-[#1F2937] text-[#9CA3AF] font-sans pt-20 pb-12 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Main Footer Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 pb-16 border-b border-[#1F2937]">
-          
+
           {/* Brand Column */}
           <div className="lg:col-span-4 space-y-6">
             <div className="flex items-center gap-3">
-              <img src="/logo-nej.png" alt="NEJ Digitale" className="h-11 w-auto" />
+              <img src="/logo-nej.webp" alt="NEJ Digitale" className="h-11 w-auto" width={44} height={44} />
               <div className="text-xs text-[#6B7280] uppercase tracking-wider">
                 Nouvelle Ère de la Jeunesse
               </div>
@@ -135,7 +123,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenProjectModal }) => {
           </div>
 
           {/* Nav Columns */}
-          <div className="lg:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-8">
+          <div className="lg:col-span-8 grid grid-cols-2 sm:grid-cols-3 gap-8">
             {navColumns.map((col, idx) => (
               <div key={idx} className="space-y-4">
                 <div className="font-display font-bold text-xs uppercase tracking-widest text-white">
@@ -144,22 +132,12 @@ export const Footer: React.FC<FooterProps> = ({ onOpenProjectModal }) => {
                 <ul className="space-y-2.5 text-xs">
                   {col.links.map((link, lIdx) => (
                     <li key={lIdx}>
-                      {link.action === 'project-modal' ? (
-                        <button
-                          type="button"
-                          onClick={onOpenProjectModal}
-                          className="hover:text-[#3B82F6] transition-colors block text-left cursor-pointer"
-                        >
-                          {link.label}
-                        </button>
-                      ) : (
-                        <a
-                          href={link.href}
-                          className="hover:text-[#3B82F6] transition-colors block"
-                        >
-                          {link.label}
-                        </a>
-                      )}
+                      <a
+                        href={link.href}
+                        className="hover:text-[#3B82F6] transition-colors block"
+                      >
+                        {link.label}
+                      </a>
                     </li>
                   ))}
                 </ul>

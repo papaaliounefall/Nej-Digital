@@ -12,9 +12,9 @@ export const TeamSection: React.FC = () => {
         <div className="max-w-3xl mb-16">
           <SectionKicker icon={Users} label="Talents & ingénierie humaine" />
 
-          <h2 className="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-[#F9FAFB] tracking-tight mb-4">
+          <h1 className="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-[#F9FAFB] tracking-tight mb-4">
             Derrière la technologie, des personnes.
-          </h2>
+          </h1>
 
           <p className="text-[#9CA3AF] text-base sm:text-lg leading-relaxed">
             Une équipe multidisciplinaire combinant ingénieurs logiciels, designers UX et spécialistes terrain, unis par une même exigence d'impact et de qualité.
@@ -106,7 +106,7 @@ export const TeamSection: React.FC = () => {
             </div>
           </div>
           <a
-            href="#contact"
+            href="/contact/"
             className="text-xs font-mono font-bold text-[#3B82F6] hover:text-white px-4 py-2 bg-[#0A0B0E] hover:bg-[#3B82F6] border border-[#1F2937] hover:border-[#3B82F6] shrink-0 transition-colors uppercase tracking-wider"
           >
             Rejoindre l'aventure →

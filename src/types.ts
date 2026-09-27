@@ -17,6 +17,7 @@ export interface Product {
   status: 'Production' | 'Déploiement' | 'Beta Active';
   targetAudience: string;
   imageUrl: string;
+  liveUrl?: string;
 }
 
 export interface PhilosophyPillar {
@@ -34,13 +35,6 @@ export interface DnaValue {
   indicator: string;
 }
 
-export interface TechCapability {
-  title: string;
-  category: string;
-  description: string;
-  tools: string[];
-}
-
 export interface TeamMember {
   name: string;
   role: string;
@@ -52,14 +46,16 @@ export interface TeamMember {
   specialty: string;
 }
 
-export interface CaseStudy {
-  id: string;
-  productName: string;
-  sector: string;
+export interface ServiceDomain {
+  title: string;
+  description: string;
+  tools: string[];
+}
+
+export interface NewsPost {
+  slug: string;
+  title: string;
+  date: string;
   tag: string;
-  clientType: string;
-  timeline: string;
-  summary: string;
-  results: string[];
-  imageUrl: string;
+  excerpt: string;
 }
