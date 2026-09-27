@@ -1,0 +1,6 @@
+{
+  "name": "NEJ Digitale — Nouvelle Ère de la Jeunesse",
+  "description": "Site officiel de NEJ Digitale, startup technologique et digitale africaine qui conçoit et développe les solutions numériques de la nouvelle génération.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
