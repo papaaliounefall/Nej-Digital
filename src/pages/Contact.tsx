@@ -51,20 +51,19 @@ export const Contact: React.FC = () => {
               </div>
             </div>
 
-            {/* TODO: remplacer par les vraies URLs de profils avant mise en ligne */}
             <div className="p-5 bg-[#111827] border border-[#1F2937]">
               <div className="text-[10px] font-mono text-[#6B7280] uppercase tracking-wider font-bold mb-3">Réseaux sociaux</div>
               <div className="flex items-center gap-3">
-                <a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn NEJ Digitale" className="w-9 h-9 bg-[#0A0B0E] hover:bg-[#3B82F6] hover:text-white border border-[#1F2937] flex items-center justify-center text-slate-300 transition-colors">
+                <a href="https://www.linkedin.com/company/nej-digital/" target="_blank" rel="noreferrer" aria-label="LinkedIn NEJ Digitale" className="w-9 h-9 bg-[#0A0B0E] hover:bg-[#3B82F6] hover:text-white border border-[#1F2937] flex items-center justify-center text-slate-300 transition-colors">
                   <Linkedin className="w-4 h-4" />
                 </a>
-                <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram NEJ Digitale" className="w-9 h-9 bg-[#0A0B0E] hover:bg-[#3B82F6] hover:text-white border border-[#1F2937] flex items-center justify-center text-slate-300 transition-colors">
+                <a href="https://www.instagram.com/nejdigital/" target="_blank" rel="noreferrer" aria-label="Instagram NEJ Digitale" className="w-9 h-9 bg-[#0A0B0E] hover:bg-[#3B82F6] hover:text-white border border-[#1F2937] flex items-center justify-center text-slate-300 transition-colors">
                   <Instagram className="w-4 h-4" />
                 </a>
-                <a href="https://facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook NEJ Digitale" className="w-9 h-9 bg-[#0A0B0E] hover:bg-[#3B82F6] hover:text-white border border-[#1F2937] flex items-center justify-center text-slate-300 transition-colors">
+                <a href="https://www.facebook.com/share/1dDcuBtPmR/?mibextid=wwXIfr" target="_blank" rel="noreferrer" aria-label="Facebook NEJ Digitale" className="w-9 h-9 bg-[#0A0B0E] hover:bg-[#3B82F6] hover:text-white border border-[#1F2937] flex items-center justify-center text-slate-300 transition-colors">
                   <Facebook className="w-4 h-4" />
                 </a>
-                <a href="https://twitter.com" target="_blank" rel="noreferrer" aria-label="X (Twitter) NEJ Digitale" className="w-9 h-9 bg-[#0A0B0E] hover:bg-[#3B82F6] hover:text-white border border-[#1F2937] flex items-center justify-center text-slate-300 transition-colors">
+                <a href="https://x.com/NEJDigital26" target="_blank" rel="noreferrer" aria-label="X (Twitter) NEJ Digitale" className="w-9 h-9 bg-[#0A0B0E] hover:bg-[#3B82F6] hover:text-white border border-[#1F2937] flex items-center justify-center text-slate-300 transition-colors">
                   <Twitter className="w-4 h-4" />
                 </a>
               </div>

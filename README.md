@@ -53,6 +53,6 @@ Pour déployer manuellement ailleurs : `npm run build`, puis uploader le contenu
 
 ## À faire avant mise en ligne officielle
 
-- Remplacer les photos d'équipe (actuellement des photos Unsplash génériques) par de vraies photos dans `src/data/nejData.ts`.
-- Renseigner un vrai numéro de téléphone et les vraies URLs des réseaux sociaux dans `src/pages/Contact.tsx` et `src/components/Footer.tsx` (marqués `TODO` dans le code).
+- Ajouter le 4e profil d'équipe (la présidente) dans `src/data/nejData.ts` dès que sa photo est disponible (marqué `TODO`).
+- Renseigner un vrai numéro de téléphone dans `src/pages/Contact.tsx` (marqué `TODO` dans le code).
 - Remplacer les 3 actualités d'exemple dans `src/data/newsData.ts` par de vraies actualités.

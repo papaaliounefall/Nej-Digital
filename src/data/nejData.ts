@@ -167,7 +167,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     photoUrl: '/papa-alioune-fall.webp',
     linkedinUrl: 'https://linkedin.com/in/papaaliounefall',
     githubUrl: 'https://github.com/papaaliounefall',
-    specialty: 'Développeur Full Stack'
+    specialty: 'Software Engineer'
   },
   {
     name: 'Anifa Djité',
@@ -176,7 +176,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     bio: 'Responsable Communication de NEJ Digitale, également active sur le développement frontend des produits.',
     location: 'Dakar, Sénégal',
     photoUrl: '/anifa-djite.webp',
-    specialty: 'Full Stack'
+    specialty: 'Développeuse Full Stack'
   },
   {
     name: 'Amadou Sow',

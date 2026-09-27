@@ -64,7 +64,7 @@ export const Footer: React.FC = () => {
             {/* Social Icons */}
             <div className="flex items-center gap-3 pt-2">
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/company/nej-digital/"
                 target="_blank"
                 rel="noreferrer"
                 className="w-9 h-9 bg-[#111827] hover:bg-[#3B82F6] hover:text-white border border-[#1F2937] flex items-center justify-center text-slate-300 transition-colors"
@@ -73,7 +73,7 @@ export const Footer: React.FC = () => {
                 <Linkedin className="w-4 h-4" />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/nejdigital/"
                 target="_blank"
                 rel="noreferrer"
                 className="w-9 h-9 bg-[#111827] hover:bg-[#3B82F6] hover:text-white border border-[#1F2937] flex items-center justify-center text-slate-300 transition-colors"
@@ -82,7 +82,7 @@ export const Footer: React.FC = () => {
                 <Instagram className="w-4 h-4" />
               </a>
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/share/1dDcuBtPmR/?mibextid=wwXIfr"
                 target="_blank"
                 rel="noreferrer"
                 className="w-9 h-9 bg-[#111827] hover:bg-[#3B82F6] hover:text-white border border-[#1F2937] flex items-center justify-center text-slate-300 transition-colors"
@@ -91,7 +91,7 @@ export const Footer: React.FC = () => {
                 <Facebook className="w-4 h-4" />
               </a>
               <a
-                href="https://twitter.com"
+                href="https://x.com/NEJDigital26"
                 target="_blank"
                 rel="noreferrer"
                 className="w-9 h-9 bg-[#111827] hover:bg-[#3B82F6] hover:text-white border border-[#1F2937] flex items-center justify-center text-slate-300 transition-colors"
@@ -100,7 +100,7 @@ export const Footer: React.FC = () => {
                 <Twitter className="w-4 h-4" />
               </a>
               <a
-                href="https://github.com"
+                href="https://github.com/nejdigital26"
                 target="_blank"
                 rel="noreferrer"
                 className="w-9 h-9 bg-[#111827] hover:bg-[#3B82F6] hover:text-white border border-[#1F2937] flex items-center justify-center text-slate-300 transition-colors"
