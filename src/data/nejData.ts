@@ -172,6 +172,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
   {
     name: 'Anifa Djité',
     role: 'Responsable Communication',
+    secondaryRole: 'Lead Developer',
     bio: 'Responsable Communication de NEJ Digitale, également active sur le développement frontend des produits.',
     location: 'Dakar, Sénégal',
     photoUrl: '/anifa-djite.webp',
@@ -180,7 +181,8 @@ export const TEAM_MEMBERS: TeamMember[] = [
   {
     name: 'Amadou Sow',
     role: 'Responsable RH',
-    bio: 'Responsable des Ressources Humaines de NEJ Digitale.',
+    bio: 'Responsable des Ressources Humaines de NEJ Digitale, il pilote le recrutement, l\'intégration et l\'accompagnement des talents qui rejoignent l\'équipe.',
+    specialty: 'Ressources Humaines & Recrutement',
     location: 'Dakar, Sénégal',
     photoUrl: '/amadou-sow.webp'
   }
