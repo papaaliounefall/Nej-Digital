@@ -34,9 +34,9 @@ export interface TeamMember {
   bio: string;
   location: string;
   photoUrl: string;
-  linkedinUrl: string;
+  linkedinUrl?: string;
   githubUrl?: string;
-  specialty: string;
+  specialty?: string;
 }
 
 export interface ServiceDomain {

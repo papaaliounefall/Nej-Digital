@@ -22,6 +22,14 @@ const PRODUCT_IMAGES = [
 const LOGO_SOURCE = 'logo-nej.png';
 const MAX_WIDTH = 1600;
 
+// Team photos are dropped in with human-typed filenames (spaces, accents) —
+// map them to clean, URL-safe names as they're converted.
+const TEAM_PHOTOS = [
+  { src: 'Papa Alioune Fall.jpeg', dest: 'papa-alioune-fall.webp' },
+  { src: 'Anifa djité.jpeg', dest: 'anifa-djite.webp' },
+  { src: 'Amadou Sow.jpeg', dest: 'amadou-sow.webp' }
+];
+
 async function convertProductImages() {
   for (const file of PRODUCT_IMAGES) {
     const src = join(PUBLIC_DIR, file);
@@ -65,6 +73,23 @@ async function convertLogoAndFavicons() {
   console.log(`${LOGO_SOURCE} -> logo-nej.webp + favicon set`);
 }
 
+async function convertTeamPhotos() {
+  for (const { src, dest } of TEAM_PHOTOS) {
+    const srcPath = join(PUBLIC_DIR, src);
+    if (!existsSync(srcPath)) {
+      console.warn(`Skip (not found): ${src}`);
+      continue;
+    }
+    await sharp(srcPath)
+      .resize({ width: 800, withoutEnlargement: true })
+      .webp({ quality: 82 })
+      .toFile(join(PUBLIC_DIR, dest));
+    unlinkSync(srcPath);
+    console.log(`${src} -> ${dest}`);
+  }
+}
+
 await convertProductImages();
 await convertLogoAndFavicons();
+await convertTeamPhotos();
 console.log('Image optimization done.');

@@ -156,45 +156,31 @@ export const DNA_VALUES: DnaValue[] = [
   }
 ];
 
-// photoUrl values are Unsplash stock placeholders — replace with real team
-// photos before pushing traffic to the site (see /equipe/ page).
+// TODO: un 4e profil (la présidente) reste à ajouter dès que sa photo est disponible.
 export const TEAM_MEMBERS: TeamMember[] = [
   {
     name: 'Papa Alioune Fall',
-    role: 'Fondateur & Lead Product Engineer',
-    bio: 'Passionné par l\'ingénierie logicielle et le développement de produits technologiques à fort impact sociétal. Conduit la vision produit et l\'architecture générale de NEJ Digitale.',
+    role: 'Secrétaire Général',
+    bio: 'Secrétaire Général de NEJ Digitale, en charge du développement backend et mobile des produits de l\'écosystème.',
     location: 'Dakar, Sénégal',
-    photoUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80',
+    photoUrl: '/papa-alioune-fall.webp',
     linkedinUrl: 'https://linkedin.com/in/papaaliounefall',
     githubUrl: 'https://github.com/papaaliounefall',
-    specialty: 'Architecture logicielle & Stratégie produit'
+    specialty: 'Développement Backend & Mobile'
   },
   {
-    name: 'Amina Diop',
-    role: 'Co-fondatrice & Directrice des Opérations',
-    bio: 'Spécialiste de la transformation organisationnelle et du déploiement opérationnel des solutions tech sur le terrain sénégalais et ouest-africain.',
+    name: 'Anifa Djité',
+    role: 'Responsable Communication',
+    bio: 'Responsable Communication de NEJ Digitale, également active sur le développement frontend des produits.',
     location: 'Dakar, Sénégal',
-    photoUrl: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80',
-    linkedinUrl: 'https://linkedin.com',
-    specialty: 'Opérations, FinTech & Croissance terrain'
+    photoUrl: '/anifa-djite.webp',
+    specialty: 'Communication & Développement Frontend'
   },
   {
-    name: 'Moussa Ndiaye',
-    role: 'Lead Backend & Data Architect',
-    bio: 'Expert en bases de données distribuées, systèmes financiers temps réel et APIs de micro-paiement. Garant de la robustesse technique et de la sécurité des plateformes.',
+    name: 'Amadou Sow',
+    role: 'Responsable RH',
+    bio: 'Responsable des Ressources Humaines de NEJ Digitale.',
     location: 'Dakar, Sénégal',
-    photoUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80',
-    linkedinUrl: 'https://linkedin.com',
-    githubUrl: 'https://github.com',
-    specialty: 'Systèmes distribués & Sécurité des paiements'
-  },
-  {
-    name: 'Fatou Bintou Sène',
-    role: 'Product Designer & UX Researcher',
-    bio: 'Défend une approche du design centrée sur les usages réels en Afrique : interfaces visuelles claires, charges cognitives réduites et adaptation aux contextes multilingues.',
-    location: 'Dakar / Saint-Louis',
-    photoUrl: 'https://images.unsplash.com/photo-1589156280159-27698a70f29e?auto=format&fit=crop&w=600&q=80',
-    linkedinUrl: 'https://linkedin.com',
-    specialty: 'Design System & Recherche utilisateur terrain'
+    photoUrl: '/amadou-sow.webp'
   }
 ];

@@ -22,20 +22,19 @@ export const TeamSection: React.FC = () => {
           </p>
         </Reveal>
 
-        {/* 4 Core Team Members Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Core Team Members Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {TEAM_MEMBERS.map((member, idx) => (
-            <Reveal key={member.name} delayMs={(idx % 4) * 70} className="h-full">
+            <Reveal key={member.name} delayMs={(idx % 3) * 70} className="h-full">
             <div
               className="h-full bg-[#111827] border border-[#1F2937] overflow-hidden hover:border-[#3B82F6] transition-all duration-300 flex flex-col justify-between group"
             >
               <div>
-                {/* Real High Quality Photograph (Authentic African Tech Professionals) */}
                 <div className="relative h-64 overflow-hidden bg-[#0A0B0E]">
                   <img
                     src={member.photoUrl}
                     alt={member.name}
-                    referrerPolicy="no-referrer"
+                    loading="lazy"
                     className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#111827] via-transparent to-transparent opacity-90" />
@@ -61,36 +60,42 @@ export const TeamSection: React.FC = () => {
                     {member.bio}
                   </p>
 
-                  <div className="text-[11px] font-mono text-slate-300 bg-[#0A0B0E] p-2 border border-[#1F2937]">
-                    <span className="text-[#6B7280] block text-[10px] uppercase font-bold tracking-wider">Spécialité :</span>
-                    {member.specialty}
-                  </div>
+                  {member.specialty && (
+                    <div className="text-[11px] font-mono text-slate-300 bg-[#0A0B0E] p-2 border border-[#1F2937]">
+                      <span className="text-[#6B7280] block text-[10px] uppercase font-bold tracking-wider">Spécialité :</span>
+                      {member.specialty}
+                    </div>
+                  )}
                 </div>
               </div>
 
               {/* Social Links Bar */}
-              <div className="p-5 pt-0 pb-5 border-t border-[#1F2937] mt-2 flex items-center gap-3">
-                <a
-                  href={member.linkedinUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="p-1.5 bg-[#0A0B0E] hover:bg-[#1F2937] border border-[#1F2937] text-slate-300 hover:text-white transition-colors"
-                  aria-label={`LinkedIn de ${member.name}`}
-                >
-                  <Linkedin className="w-4 h-4" />
-                </a>
-                {member.githubUrl && (
-                  <a
-                    href={member.githubUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="p-1.5 bg-[#0A0B0E] hover:bg-[#1F2937] border border-[#1F2937] text-slate-300 hover:text-white transition-colors"
-                    aria-label={`GitHub de ${member.name}`}
-                  >
-                    <Github className="w-4 h-4" />
-                  </a>
-                )}
-              </div>
+              {(member.linkedinUrl || member.githubUrl) && (
+                <div className="p-5 pt-0 pb-5 border-t border-[#1F2937] mt-2 flex items-center gap-3">
+                  {member.linkedinUrl && (
+                    <a
+                      href={member.linkedinUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="p-1.5 bg-[#0A0B0E] hover:bg-[#1F2937] border border-[#1F2937] text-slate-300 hover:text-white transition-colors"
+                      aria-label={`LinkedIn de ${member.name}`}
+                    >
+                      <Linkedin className="w-4 h-4" />
+                    </a>
+                  )}
+                  {member.githubUrl && (
+                    <a
+                      href={member.githubUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="p-1.5 bg-[#0A0B0E] hover:bg-[#1F2937] border border-[#1F2937] text-slate-300 hover:text-white transition-colors"
+                      aria-label={`GitHub de ${member.name}`}
+                    >
+                      <Github className="w-4 h-4" />
+                    </a>
+                  )}
+                </div>
+              )}
             </div>
             </Reveal>
           ))}
