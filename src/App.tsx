@@ -6,15 +6,12 @@
 import React, { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
-import { PositioningSection } from './components/PositioningSection';
 import { SolutionsEcosystem } from './components/SolutionsEcosystem';
-import { PhilosophySection } from './components/PhilosophySection';
-import { DnaSection } from './components/DnaSection';
+import { RealisationsSection } from './components/RealisationsSection';
+import { IdentitySection } from './components/IdentitySection';
 import { AfricaSection } from './components/AfricaSection';
 import { TechnologySection } from './components/TechnologySection';
 import { AiPragmatismSection } from './components/AiPragmatismSection';
-import { VisionSection } from './components/VisionSection';
-import { RealisationsSection } from './components/RealisationsSection';
 import { TeamSection } from './components/TeamSection';
 import { FinalCta } from './components/FinalCta';
 import { Footer } from './components/Footer';
@@ -58,47 +55,36 @@ export default function App() {
           onOpenProjectModal={() => handleOpenProjectModal()}
         />
 
-        {/* 2. Notre Positionnement */}
-        <PositioningSection
-          onOpenProjectModal={() => handleOpenProjectModal()}
-        />
-
-        {/* 3. Nos Solutions (L'Écosystème) */}
+        {/* 2. Nos Solutions (L'Écosystème) */}
         <SolutionsEcosystem
           selectedProductId={selectedProductId}
           onSelectTab={setSelectedProductId}
           onExploreProduct={handleSelectProduct}
         />
 
-        {/* 4. La Philosophie NEJ */}
-        <PhilosophySection />
-
-        {/* 5. L'ADN NEJ */}
-        <DnaSection />
-
-        {/* 6. Section Afrique */}
-        <AfricaSection />
-
-        {/* 7. Section Technologie */}
-        <TechnologySection />
-
-        {/* 8. Section IA (Mesurée & Pragmatique) */}
-        <AiPragmatismSection />
-
-        {/* 9. Section Vision */}
-        <VisionSection
-          onOpenProjectModal={() => handleOpenProjectModal()}
-        />
-
-        {/* 10. Section Réalisations */}
+        {/* 3. Section Réalisations (preuve sociale, dès que possible) */}
         <RealisationsSection
           onSelectProduct={handleSelectProduct}
         />
 
-        {/* 11. Section Équipe */}
+        {/* 4. Identité NEJ (Positionnement + Philosophie + ADN + Vision) */}
+        <IdentitySection
+          onOpenProjectModal={() => handleOpenProjectModal()}
+        />
+
+        {/* 5. Section Afrique */}
+        <AfricaSection />
+
+        {/* 6. Section Technologie */}
+        <TechnologySection />
+
+        {/* 7. Section IA (Mesurée & Pragmatique) */}
+        <AiPragmatismSection />
+
+        {/* 8. Section Équipe */}
         <TeamSection />
 
-        {/* 12. CTA Final */}
+        {/* 9. CTA Final */}
         <FinalCta
           onOpenProjectModal={() => handleOpenProjectModal()}
         />

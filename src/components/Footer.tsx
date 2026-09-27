@@ -38,9 +38,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenProjectModal }) => {
     {
       title: 'Entreprise',
       links: [
-        { label: 'Positionnement', href: '#positionnement' },
-        { label: 'Philosophie & Méthode', href: '#philosophie' },
-        { label: 'L\'ADN NEJ', href: '#adn' },
+        { label: 'Positionnement & Vision', href: '#positionnement' },
         { label: 'Équipe & Talents', href: '#equipe' },
       ]
     },

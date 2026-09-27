@@ -1,12 +1,22 @@
 import React from 'react';
-import { Target, Globe, Zap, ArrowRight } from 'lucide-react';
+import {
+  Target, Globe, Zap, ArrowRight,
+  Eye, Lightbulb, Hammer, RefreshCw,
+  Flame, Sparkles, Activity, ShieldAlert, Rocket
+} from 'lucide-react';
 import { SectionKicker } from './SectionKicker';
+import { PHILOSOPHY_PILLARS, DNA_VALUES } from '../data/nejData';
 
-interface PositioningSectionProps {
+interface IdentitySectionProps {
   onOpenProjectModal: () => void;
 }
 
-export const PositioningSection: React.FC<PositioningSectionProps> = ({ onOpenProjectModal }) => {
+const METHOD_ICONS = [Eye, Lightbulb, Hammer, RefreshCw];
+const DNA_ICONS = [Flame, Sparkles, Activity, ShieldAlert, Rocket];
+
+/** Merged Positionnement + Philosophie + ADN + Vision into one identity section
+ * to cut redundant "who we are" storytelling before reaching Réalisations. */
+export const IdentitySection: React.FC<IdentitySectionProps> = ({ onOpenProjectModal }) => {
   const pillars = [
     {
       icon: Target,
@@ -29,13 +39,13 @@ export const PositioningSection: React.FC<PositioningSectionProps> = ({ onOpenPr
   ];
 
   return (
-    <section id="positionnement" className="py-24 lg:py-32 bg-[#0A0B0E] border-b border-[#1F2937] relative">
+    <section id="positionnement" className="py-24 lg:py-32 bg-[#0A0B0E] border-b border-[#1F2937] relative overflow-hidden">
       {/* Background Subtle Accent */}
       <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[400px] h-[400px] bg-[#3B82F6]/[0.02] blur-[150px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
-        {/* Top Header Block */}
+
+        {/* Identity Header */}
         <div className="max-w-3xl mb-16">
           <SectionKicker label="Notre positionnement stratégique" />
 
@@ -53,8 +63,8 @@ export const PositioningSection: React.FC<PositioningSectionProps> = ({ onOpenPr
           </div>
         </div>
 
-        {/* 3 Structural Columns */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        {/* 3 Structural Pillars */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
           {pillars.map((pillar, idx) => {
             const Icon = pillar.icon;
             return (
@@ -89,29 +99,69 @@ export const PositioningSection: React.FC<PositioningSectionProps> = ({ onOpenPr
           })}
         </div>
 
-        {/* Highlight Quote Banner */}
-        <div className="bg-[#111827] border border-[#1F2937] p-8 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-8">
-          <div className="max-w-2xl">
-            <div className="text-[10px] font-mono text-[#3B82F6] uppercase tracking-widest font-bold mb-3">
-              L'IDÉE CENTRALE DE LA MARQUE
-            </div>
-            <div className="text-xl sm:text-2xl font-display font-black text-white leading-snug">
-              « NEJ Digitale représente une nouvelle génération qui ne se contente pas d'utiliser la technologie : elle la construit. »
-            </div>
-            <div className="flex flex-wrap items-center gap-2.5 mt-5 text-[10px] font-mono text-[#9CA3AF] uppercase tracking-wider font-bold">
-              <span className="px-2.5 py-1 bg-[#1F2937] border border-[#374151] text-white">Jeunesse</span>
-              <span className="px-2.5 py-1 bg-[#1F2937] border border-[#374151] text-white">Technologie</span>
-              <span className="px-2.5 py-1 bg-[#1F2937] border border-[#374151] text-white">Créativité</span>
-              <span className="px-2.5 py-1 bg-[#1F2937] border border-[#374151] text-white">Impact</span>
-              <span className="px-2.5 py-1 bg-[#1F2937] border border-[#374151] text-white">Ambition</span>
-            </div>
+        {/* Compact Method Strip (ex-Philosophie) */}
+        <div className="mb-20">
+          <div className="text-[10px] font-mono text-[#6B7280] uppercase tracking-widest font-bold mb-5">
+            Notre méthode, en quatre temps
           </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {PHILOSOPHY_PILLARS.map((pillar, idx) => {
+              const Icon = METHOD_ICONS[idx];
+              return (
+                <div
+                  key={pillar.number}
+                  className="bg-[#111827] border border-[#1F2937] p-5 hover:border-[#3B82F6] transition-colors duration-300"
+                >
+                  <div className="flex items-center justify-between mb-3">
+                    <Icon className="w-4 h-4 text-[#3B82F6]" />
+                    <span className="text-[10px] font-mono text-[#6B7280]">{pillar.number}</span>
+                  </div>
+                  <h4 className="font-display font-bold text-sm text-white mb-1">
+                    {pillar.title}
+                  </h4>
+                  <p className="text-xs text-[#9CA3AF] leading-snug">
+                    {pillar.subtitle}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
 
+        {/* Compact Values Strip (ex-ADN) */}
+        <div className="bg-[#111827] border border-[#1F2937] p-8 sm:p-10 mb-20">
+          <div className="text-[10px] font-mono text-[#3B82F6] uppercase tracking-widest font-bold mb-6">
+            Ce qui nous définit
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-5 gap-6">
+            {DNA_VALUES.map((dna, idx) => {
+              const Icon = DNA_ICONS[idx];
+              return (
+                <div key={dna.name}>
+                  <Icon className="w-4 h-4 text-[#3B82F6] mb-2" />
+                  <div className="text-sm font-bold text-white mb-1">{dna.name}</div>
+                  <div className="text-[11px] text-[#9CA3AF] leading-snug">{dna.indicator}</div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Closing Manifesto + Single CTA (ex-Vision) */}
+        <div className="text-center max-w-3xl mx-auto">
+          <h3 className="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight leading-[1.08] mb-6">
+            Une nouvelle ère pour une nouvelle génération.
+          </h3>
+          <p className="text-base sm:text-lg text-[#9CA3AF] leading-relaxed mb-10">
+            NEJ Digitale veut contribuer à faire émerger une génération africaine capable de{' '}
+            <span className="text-white font-semibold">concevoir, développer et déployer</span>{' '}
+            les technologies qui façonneront son avenir.
+          </p>
           <button
             onClick={onOpenProjectModal}
-            className="shrink-0 px-8 py-4 bg-[#3B82F6] text-white hover:bg-blue-600 font-bold text-xs uppercase tracking-widest inline-flex items-center gap-3 active:scale-95 transition-all shadow-lg shadow-blue-500/10 cursor-pointer"
+            className="px-8 py-4 bg-[#3B82F6] text-white hover:bg-[#2563EB] font-bold text-sm tracking-wide uppercase inline-flex items-center gap-2 active:scale-95 transition-all shadow-xl cursor-pointer"
           >
-            <span>Collaborer avec NEJ</span>
+            <span>Rejoindre la dynamique</span>
             <ArrowRight className="w-4 h-4" />
           </button>
         </div>
