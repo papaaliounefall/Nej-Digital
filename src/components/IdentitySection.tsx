@@ -5,6 +5,7 @@ import {
   Flame, Sparkles, Activity, ShieldAlert, Rocket
 } from 'lucide-react';
 import { SectionKicker } from './SectionKicker';
+import { Reveal } from './Reveal';
 import { PHILOSOPHY_PILLARS, DNA_VALUES } from '../data/nejData';
 
 const METHOD_ICONS = [Eye, Lightbulb, Hammer, RefreshCw];
@@ -64,9 +65,9 @@ export const IdentitySection: React.FC = () => {
           {pillars.map((pillar, idx) => {
             const Icon = pillar.icon;
             return (
+              <Reveal key={idx} delayMs={idx * 70} className="h-full">
               <div
-                key={idx}
-                className="bg-[#111827] border border-[#1F2937] p-8 hover:border-[#3B82F6] transition-all duration-300 flex flex-col justify-between group"
+                className="h-full bg-[#111827] border border-[#1F2937] p-8 hover:border-[#3B82F6] transition-all duration-300 flex flex-col justify-between group"
               >
                 <div>
                   <div className="flex items-center justify-between mb-6">
@@ -91,12 +92,13 @@ export const IdentitySection: React.FC = () => {
                   Pilier {idx + 1}
                 </div>
               </div>
+              </Reveal>
             );
           })}
         </div>
 
         {/* Method Strip (ex-Philosophie) — a one-line sequence, not a detailed methodology */}
-        <div className="mb-20">
+        <Reveal className="mb-20">
           <div className="text-[10px] font-mono text-[#6B7280] uppercase tracking-widest font-bold mb-5">
             Notre méthode, en quatre temps
           </div>
@@ -116,10 +118,10 @@ export const IdentitySection: React.FC = () => {
               );
             })}
           </div>
-        </div>
+        </Reveal>
 
         {/* Compact Values Strip (ex-ADN) */}
-        <div className="bg-[#111827] border border-[#1F2937] p-8 sm:p-10 mb-20">
+        <Reveal className="bg-[#111827] border border-[#1F2937] p-8 sm:p-10 mb-20">
           <div className="text-[10px] font-mono text-[#3B82F6] uppercase tracking-widest font-bold mb-6">
             Ce qui nous définit
           </div>
@@ -135,10 +137,10 @@ export const IdentitySection: React.FC = () => {
               );
             })}
           </div>
-        </div>
+        </Reveal>
 
         {/* Closing Manifesto + Single CTA (ex-Vision) */}
-        <div className="text-center max-w-3xl mx-auto">
+        <Reveal className="text-center max-w-3xl mx-auto">
           <h2 className="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight leading-[1.08] mb-6">
             Une nouvelle ère pour une nouvelle génération.
           </h2>
@@ -154,7 +156,7 @@ export const IdentitySection: React.FC = () => {
             <span>Rejoindre la dynamique</span>
             <ArrowRight className="w-4 h-4" />
           </a>
-        </div>
+        </Reveal>
 
       </div>
     </section>

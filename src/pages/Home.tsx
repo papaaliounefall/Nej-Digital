@@ -3,6 +3,7 @@ import { Code2, BrainCircuit, RefreshCcw, GraduationCap, Rocket, ArrowRight, Lay
 import { Hero } from '../components/Hero';
 import { SectionKicker } from '../components/SectionKicker';
 import { ProjectsGrid } from '../components/ProjectsGrid';
+import { Reveal } from '../components/Reveal';
 import { SERVICES } from '../data/servicesData';
 
 const SERVICE_ICONS = [Code2, BrainCircuit, RefreshCcw, GraduationCap, Rocket];
@@ -14,7 +15,7 @@ export const Home: React.FC = () => {
 
       {/* Domaines d'intervention (preview) */}
       <section className="py-24 lg:py-32 bg-[#0A0B0E] border-b border-[#1F2937] relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Reveal className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
             <div className="max-w-2xl">
               <SectionKicker label="Nos domaines d'intervention" />
@@ -43,12 +44,12 @@ export const Home: React.FC = () => {
               );
             })}
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* Nos projets (preview) */}
       <section id="projets-preview" className="py-24 lg:py-32 bg-[#0A0B0E] border-b border-[#1F2937] relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Reveal className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
             <div className="max-w-2xl">
               <SectionKicker icon={Layers} label="Nos projets" />
@@ -63,12 +64,12 @@ export const Home: React.FC = () => {
           </div>
 
           <ProjectsGrid limit={3} />
-        </div>
+        </Reveal>
       </section>
 
       {/* Closing CTA */}
       <section className="py-24 lg:py-32 bg-[#0A0B0E] relative text-center">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Reveal className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight leading-[1.08] mb-6">
             Et si votre prochaine idée devenait notre prochain produit ?
           </h2>
@@ -82,7 +83,7 @@ export const Home: React.FC = () => {
             <span>Nous contacter</span>
             <ArrowRight className="w-5 h-5" />
           </a>
-        </div>
+        </Reveal>
       </section>
     </>
   );

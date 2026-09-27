@@ -2,14 +2,15 @@ import React from 'react';
 import { TEAM_MEMBERS } from '../data/nejData';
 import { Linkedin, Github, MapPin, Users, Sparkles } from 'lucide-react';
 import { SectionKicker } from './SectionKicker';
+import { Reveal } from './Reveal';
 
 export const TeamSection: React.FC = () => {
   return (
     <section id="equipe" className="py-24 lg:py-32 bg-[#0A0B0E] border-b border-[#1F2937] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Section Header */}
-        <div className="max-w-3xl mb-16">
+        <Reveal className="max-w-3xl mb-16">
           <SectionKicker icon={Users} label="Talents & ingénierie humaine" />
 
           <h1 className="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-[#F9FAFB] tracking-tight mb-4">
@@ -19,14 +20,14 @@ export const TeamSection: React.FC = () => {
           <p className="text-[#9CA3AF] text-base sm:text-lg leading-relaxed">
             Une équipe multidisciplinaire combinant ingénieurs logiciels, designers UX et spécialistes terrain, unis par une même exigence d'impact et de qualité.
           </p>
-        </div>
+        </Reveal>
 
         {/* 4 Core Team Members Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {TEAM_MEMBERS.map((member) => (
+          {TEAM_MEMBERS.map((member, idx) => (
+            <Reveal key={member.name} delayMs={(idx % 4) * 70} className="h-full">
             <div
-              key={member.name}
-              className="bg-[#111827] border border-[#1F2937] overflow-hidden hover:border-[#3B82F6] transition-all duration-300 flex flex-col justify-between group"
+              className="h-full bg-[#111827] border border-[#1F2937] overflow-hidden hover:border-[#3B82F6] transition-all duration-300 flex flex-col justify-between group"
             >
               <div>
                 {/* Real High Quality Photograph (Authentic African Tech Professionals) */}
@@ -91,11 +92,12 @@ export const TeamSection: React.FC = () => {
                 )}
               </div>
             </div>
+            </Reveal>
           ))}
         </div>
 
         {/* Recruitment / Culture Note */}
-        <div className="mt-12 p-6 bg-[#111827] border border-[#1F2937] flex flex-col sm:flex-row items-center justify-between gap-4">
+        <Reveal className="mt-12 p-6 bg-[#111827] border border-[#1F2937] flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <div className="w-9 h-9 bg-[#0A0B0E] border border-[#1F2937] flex items-center justify-center text-[#3B82F6] shrink-0">
               <Sparkles className="w-4 h-4" />
@@ -111,7 +113,7 @@ export const TeamSection: React.FC = () => {
           >
             Rejoindre l'aventure →
           </a>
-        </div>
+        </Reveal>
 
       </div>
     </section>

@@ -2,12 +2,13 @@ import React from 'react';
 import { Mail, Phone, MapPin, Linkedin, Instagram, Facebook, Twitter } from 'lucide-react';
 import { SectionKicker } from '../components/SectionKicker';
 import { ContactForm } from '../components/ContactForm';
+import { Reveal } from '../components/Reveal';
 
 export const Contact: React.FC = () => {
   return (
     <section className="py-24 lg:py-32 bg-[#0A0B0E] relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mb-14">
+        <Reveal className="max-w-3xl mb-14">
           <SectionKicker label="Contact" />
           <h1 className="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-[#F9FAFB] tracking-tight leading-[1.08] mb-4">
             Parlons de votre projet.
@@ -15,14 +16,14 @@ export const Contact: React.FC = () => {
           <p className="text-[#9CA3AF] text-base sm:text-lg leading-relaxed">
             Notre équipe à Dakar vous répond sous 24 heures ouvrées.
           </p>
-        </div>
+        </Reveal>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
-          <div className="lg:col-span-7">
+          <Reveal className="lg:col-span-7">
             <ContactForm />
-          </div>
+          </Reveal>
 
-          <div className="lg:col-span-5 space-y-4">
+          <Reveal delayMs={100} className="lg:col-span-5 space-y-4">
             <div className="p-5 bg-[#111827] border border-[#1F2937] flex items-start gap-3">
               <Mail className="w-4 h-4 text-[#3B82F6] mt-0.5 shrink-0" />
               <div>
@@ -68,7 +69,7 @@ export const Contact: React.FC = () => {
                 </a>
               </div>
             </div>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

@@ -3,6 +3,7 @@ import { ShoppingBag, GraduationCap, Sprout, Landmark, Trophy, Car, ArrowUpRight
 import { PRODUCTS } from '../data/nejData';
 import { Product } from '../types';
 import { ProductInfoModal } from './ProductInfoModal';
+import { Reveal } from './Reveal';
 
 const getProductIcon = (id: string) => {
   switch (id) {
@@ -28,12 +29,12 @@ export const ProjectsGrid: React.FC<ProjectsGridProps> = ({ limit }) => {
   return (
     <>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {products.map((product) => {
+        {products.map((product, idx) => {
           const Icon = getProductIcon(product.id);
           return (
+            <Reveal key={product.id} delayMs={(idx % 3) * 70} className="h-full">
             <div
-              key={product.id}
-              className="bg-[#111827] border border-[#1F2937] overflow-hidden hover:border-[#3B82F6] transition-all duration-300 flex flex-col justify-between group"
+              className="h-full bg-[#111827] border border-[#1F2937] overflow-hidden hover:border-[#3B82F6] transition-all duration-300 flex flex-col justify-between group"
             >
               <div>
                 <div className="relative h-44 overflow-hidden bg-[#0A0B0E]">
@@ -77,6 +78,7 @@ export const ProjectsGrid: React.FC<ProjectsGridProps> = ({ limit }) => {
                 </button>
               </div>
             </div>
+            </Reveal>
           );
         })}
       </div>

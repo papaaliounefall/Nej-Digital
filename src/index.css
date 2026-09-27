@@ -41,12 +41,6 @@
   background: #374151;
 }
 
-/* Dark map style: standard OSM tiles inverted to match the site's palette
-   (CartoDB's free dark tiles now require an API key, so we invert the always-free OSM tiles instead) */
-.map-tiles-dark {
-  filter: invert(1) hue-rotate(180deg) brightness(0.95) contrast(0.9);
-}
-
 /* Modal transitions */
 @keyframes fadeIn {
   from { opacity: 0; }
@@ -67,6 +61,25 @@
 @media (prefers-reduced-motion: reduce) {
   .animate-fadeIn, .animate-scaleIn {
     animation: none;
+  }
+}
+
+/* Scroll reveal — subtle fade + rise as sections enter the viewport.
+   Always visible without JS/with reduced motion, so nothing depends on it. */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }
 
