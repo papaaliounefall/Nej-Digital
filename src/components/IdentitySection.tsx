@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  Target, Globe, Zap, ArrowRight,
+  Target, Globe, Zap, ArrowRight, ChevronRight,
   Eye, Lightbulb, Hammer, RefreshCw,
   Flame, Sparkles, Activity, ShieldAlert, Rocket
 } from 'lucide-react';
@@ -95,30 +95,24 @@ export const IdentitySection: React.FC = () => {
           })}
         </div>
 
-        {/* Compact Method Strip (ex-Philosophie) */}
+        {/* Method Strip (ex-Philosophie) — a one-line sequence, not a detailed methodology */}
         <div className="mb-20">
           <div className="text-[10px] font-mono text-[#6B7280] uppercase tracking-widest font-bold mb-5">
             Notre méthode, en quatre temps
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="flex flex-wrap items-center gap-3 bg-[#111827] border border-[#1F2937] p-6">
             {PHILOSOPHY_PILLARS.map((pillar, idx) => {
               const Icon = METHOD_ICONS[idx];
               return (
-                <div
-                  key={pillar.number}
-                  className="bg-[#111827] border border-[#1F2937] p-5 hover:border-[#3B82F6] transition-colors duration-300"
-                >
-                  <div className="flex items-center justify-between mb-3">
+                <React.Fragment key={pillar.number}>
+                  <div className="flex items-center gap-2">
                     <Icon className="w-4 h-4 text-[#3B82F6]" />
-                    <span className="text-[10px] font-mono text-[#6B7280]">{pillar.number}</span>
+                    <span className="font-display font-bold text-sm text-white">{pillar.title}</span>
                   </div>
-                  <h4 className="font-display font-bold text-sm text-white mb-1">
-                    {pillar.title}
-                  </h4>
-                  <p className="text-xs text-[#9CA3AF] leading-snug">
-                    {pillar.subtitle}
-                  </p>
-                </div>
+                  {idx < PHILOSOPHY_PILLARS.length - 1 && (
+                    <ChevronRight className="w-4 h-4 text-[#374151] shrink-0" />
+                  )}
+                </React.Fragment>
               );
             })}
           </div>

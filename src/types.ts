@@ -5,15 +5,11 @@ export interface Product {
   category: string;
   tagline: string;
   description: string;
-  problem: string;
-  solution: string;
   impact: string;
   metrics: {
     label: string;
     value: string;
   }[];
-  techStack: string[];
-  keyFeatures: string[];
   status: 'Production' | 'Déploiement' | 'Beta Active';
   targetAudience: string;
   imageUrl: string;
@@ -23,9 +19,6 @@ export interface Product {
 export interface PhilosophyPillar {
   number: string;
   title: string;
-  subtitle: string;
-  description: string;
-  action: string;
 }
 
 export interface DnaValue {
@@ -49,7 +42,6 @@ export interface TeamMember {
 export interface ServiceDomain {
   title: string;
   description: string;
-  tools: string[];
 }
 
 export interface NewsPost {

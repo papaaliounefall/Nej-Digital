@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, CheckCircle2, ArrowRight } from 'lucide-react';
+import { X, ArrowRight } from 'lucide-react';
 import { Product } from '../types';
 import { useModalDismiss } from '../hooks/useModalDismiss';
 
@@ -8,8 +8,9 @@ interface ProductInfoModalProps {
   onClose: () => void;
 }
 
-/** Pure content modal ("en savoir plus") — no lead-capture form, just the
- * product's full detail. Contact intent is a plain link to the Contact page. */
+/** Pure content modal ("en savoir plus") — narrative only, no mechanism-level
+ * detail (tech stack, feature list, problem/solution breakdown) that would
+ * hand a competitor a blueprint. Contact intent is a plain link to Contact. */
 export const ProductInfoModal: React.FC<ProductInfoModalProps> = ({ product, onClose }) => {
   useModalDismiss(product !== null, onClose);
 
@@ -24,7 +25,7 @@ export const ProductInfoModal: React.FC<ProductInfoModalProps> = ({ product, onC
       aria-labelledby="product-modal-title"
     >
       <div
-        className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto bg-[#111827] border border-[#1F2937] p-6 sm:p-8 lg:p-10 shadow-2xl text-left animate-scaleIn"
+        className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-[#111827] border border-[#1F2937] p-6 sm:p-8 lg:p-10 shadow-2xl text-left animate-scaleIn"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
@@ -64,61 +65,26 @@ export const ProductInfoModal: React.FC<ProductInfoModalProps> = ({ product, onC
           />
         </div>
 
-        {/* Long Description */}
+        {/* Narrative: what we built and why — no mechanism-level detail */}
         <div className="text-[#9CA3AF] text-sm sm:text-base leading-relaxed mb-8 p-5 bg-[#0A0B0E] border border-[#1F2937]">
           {product.description}
         </div>
 
-        {/* 3 Pillars: Problem, Solution (Objectif), Impact */}
-        <div className="space-y-4 mb-8">
-          <div className="p-4 bg-[#0A0B0E] border border-[#1F2937]">
-            <div className="text-[10px] font-mono font-bold uppercase text-rose-400 mb-1 tracking-wider">
-              Le problème réel
-            </div>
-            <div className="text-xs sm:text-sm text-slate-200 leading-relaxed">
-              {product.problem}
-            </div>
+        {/* Impact */}
+        <div className="mb-8 p-4 bg-[#0A0B0E] border border-[#1F2937] border-l-2 border-l-[#3B82F6]">
+          <div className="text-[10px] font-mono font-bold uppercase text-[#3B82F6] mb-1 tracking-wider">
+            Impact
           </div>
-
-          <div className="p-4 bg-[#0A0B0E] border border-[#1F2937]">
-            <div className="text-[10px] font-mono font-bold uppercase text-[#3B82F6] mb-1 tracking-wider">
-              Objectif & solution déployée
-            </div>
-            <div className="text-xs sm:text-sm text-slate-200 leading-relaxed">
-              {product.solution}
-            </div>
-          </div>
-
-          <div className="p-4 bg-[#0A0B0E] border border-[#1F2937]">
-            <div className="text-[10px] font-mono font-bold uppercase text-emerald-400 mb-1 tracking-wider">
-              Impact concret & mesurable
-            </div>
-            <div className="text-xs sm:text-sm text-slate-200 leading-relaxed">
-              {product.impact}
-            </div>
-          </div>
-        </div>
-
-        {/* Key Features */}
-        <div className="mb-8">
-          <h4 className="text-[10px] font-mono uppercase tracking-wider text-[#6B7280] font-bold mb-3">
-            Fonctionnalités clés du produit :
-          </h4>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-            {product.keyFeatures.map((feat, idx) => (
-              <div key={idx} className="flex items-start gap-2 text-xs text-slate-300 p-3 bg-[#0A0B0E] border border-[#1F2937]">
-                <CheckCircle2 className="w-4 h-4 text-[#3B82F6] shrink-0 mt-0.5" />
-                <span>{feat}</span>
-              </div>
-            ))}
+          <div className="text-xs sm:text-sm text-slate-200 leading-relaxed">
+            {product.impact}
           </div>
         </div>
 
         {/* Live Metrics Grid */}
         <div className="mb-8 p-5 bg-[#0A0B0E] border border-[#1F2937]">
-          <h4 className="text-[10px] font-mono uppercase tracking-wider text-[#6B7280] font-bold mb-3">
+          <h3 className="text-[10px] font-mono uppercase tracking-wider text-[#6B7280] font-bold mb-3">
             Indicateurs de performance réels :
-          </h4>
+          </h3>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {product.metrics.map((m, idx) => (
               <div key={idx} className="p-3 bg-[#111827] border border-[#1F2937] text-center">
@@ -127,20 +93,6 @@ export const ProductInfoModal: React.FC<ProductInfoModalProps> = ({ product, onC
                   {m.value}
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Tech Stack Pills */}
-        <div className="mb-8">
-          <h4 className="text-[10px] font-mono uppercase tracking-wider text-[#6B7280] font-bold mb-2">
-            Technologies utilisées :
-          </h4>
-          <div className="flex flex-wrap gap-2">
-            {product.techStack.map((tech, idx) => (
-              <span key={idx} className="text-xs font-mono px-3 py-1 bg-[#0A0B0E] border border-[#1F2937] text-slate-300">
-                {tech}
-              </span>
             ))}
           </div>
         </div>
