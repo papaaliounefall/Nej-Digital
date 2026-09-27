@@ -20,17 +20,6 @@ export const Footer: React.FC = () => {
 
   const navColumns: { title: string; links: FooterLink[] }[] = [
     {
-      title: 'Écosystème',
-      links: [
-        { label: 'SunuMall (Commerce)', href: '/projets/' },
-        { label: 'OrientaSn (Éducation)', href: '/projets/' },
-        { label: 'AgriMarket (Agriculture)', href: '/projets/' },
-        { label: 'HadraSmart (Ville intelligente)', href: '/projets/' },
-        { label: 'MiniFoot (Sport)', href: '/projets/' },
-        { label: 'SunuCar (Mobilité)', href: '/projets/' },
-      ]
-    },
-    {
       title: 'Entreprise',
       links: [
         { label: 'À propos & Vision', href: '/a-propos/' },
@@ -123,7 +112,7 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Nav Columns */}
-          <div className="lg:col-span-8 grid grid-cols-2 sm:grid-cols-3 gap-8">
+          <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-8">
             {navColumns.map((col, idx) => (
               <div key={idx} className="space-y-4">
                 <div className="font-display font-bold text-xs uppercase tracking-widest text-white">
