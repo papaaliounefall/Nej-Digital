@@ -128,7 +128,7 @@ export const DNA_VALUES: DnaValue[] = [
     name: 'Innovation',
     headline: 'Des idées transformées en solutions concrètes.',
     description: 'L\'innovation chez NEJ Digitale n\'est pas un slogan abstrait : c\'est la capacité à livrer des outils fonctionnels qui règlent un vrai problème dès le premier jour.',
-    indicator: '6 produits en déploiement, chacun répondant à un goulet d\'étranglement concret.'
+    indicator: 'Plusieurs produits en développement, chacun répondant à un goulet d\'étranglement concret.'
   },
   {
     name: 'Impact',

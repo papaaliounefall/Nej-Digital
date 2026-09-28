@@ -76,7 +76,7 @@ export const Hero: React.FC = () => {
             <div className="pt-6 border-t grid grid-cols-3 gap-3 sm:gap-6 text-left" style={{ borderColor: '#1a2030' }}>
               <div>
                 <span className="text-[10px] uppercase tracking-wide font-bold block mb-1" style={{ color: '#6B7280' }}>Écosystème</span>
-                <div className="font-display font-black text-lg sm:text-2xl" style={{ color: '#F5F5F2' }}>6 Produits</div>
+                <div className="font-display font-black text-lg sm:text-2xl" style={{ color: '#F5F5F2' }}>Plusieurs Produits</div>
               </div>
               <div>
                 <span className="text-[10px] uppercase tracking-wide font-bold block mb-1" style={{ color: '#6B7280' }}>Territoire</span>
