@@ -154,42 +154,35 @@ export const TEAM_MEMBERS: TeamMember[] = [
   {
     name: 'Khady Cissé',
     role: 'Cofondatrice & Présidente',
-    secondaryRole: 'Developer',
     bio: 'Présidente et cofondatrice de NEJ Digitale, elle porte la vision stratégique de l\'entreprise et contribue au développement des produits.',
     location: 'Dakar, Sénégal',
     photoUrl: '/khady-cisse.webp',
     // TODO: renseigner les vraies URLs
     linkedinUrl: '',
-    githubUrl: '',
-    specialty: 'Développeuse Full Stack'
+    githubUrl: ''
   },
   {
     name: 'Papa Alioune Fall',
     role: 'Cofondateur & Secrétaire Général',
-    secondaryRole: 'Software Engineer',
     bio: 'Cofondateur de NEJ Digital, il coordonne les activités administratives et organisationnelles de la structure tout en concevant et développant ses solutions numériques.',
     location: 'Dakar, Sénégal',
     photoUrl: '/papa-alioune-fall.webp',
     linkedinUrl: 'https://www.linkedin.com/in/papa-alioune-fall-03a1b2377/',
-    githubUrl: 'https://github.com/papaaliounefall',
-    specialty: 'Software Engineer'
+    githubUrl: 'https://github.com/papaaliounefall'
   },
   {
     name: 'Anifa Djité',
     role: 'Responsable Communication',
-    secondaryRole: 'Developer',
     bio: 'Responsable Communication de NEJ Digitale, également active sur le développement des produits.',
     location: 'Dakar, Sénégal',
     photoUrl: '/anifa-djite.webp',
     linkedinUrl: 'https://www.linkedin.com/in/anifa-djitté-7673a5350',
-    githubUrl: 'https://github.com/anifa2003',
-    specialty: 'Développeuse Full Stack'
+    githubUrl: 'https://github.com/anifa2003'
   },
   {
     name: 'Amadou Sow',
     role: 'Responsable RH',
     bio: 'Responsable des Ressources Humaines de NEJ Digitale, il pilote le recrutement, l\'intégration et l\'accompagnement des talents qui rejoignent l\'équipe.',
-    specialty: 'Ressources Humaines & Recrutement',
     location: 'Dakar, Sénégal',
     photoUrl: '/amadou-sow.webp',
     // TODO: renseigner les vraies URLs

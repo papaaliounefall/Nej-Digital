@@ -30,14 +30,11 @@ export interface DnaValue {
 export interface TeamMember {
   name: string;
   role: string;
-  /** Secondary, technical title shown under the main role (e.g. "Lead Developer"). */
-  secondaryRole?: string;
   bio: string;
   location: string;
   photoUrl: string;
   linkedinUrl?: string;
   githubUrl?: string;
-  specialty?: string;
 }
 
 export interface ServiceDomain {
