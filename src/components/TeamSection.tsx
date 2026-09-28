@@ -108,6 +108,13 @@ export const TeamSection: React.FC = () => {
           ))}
         </div>
 
+        {/* Note: only leadership is pictured — the wider team isn't listed by name. */}
+        <Reveal className="mt-8 text-center">
+          <p className="text-xs sm:text-sm text-[#9CA3AF] max-w-2xl mx-auto">
+            Ce noyau dirigeant est entouré d'une équipe plus large d'ingénieurs, de designers et de spécialistes qui contribuent chaque jour à la construction de nos produits.
+          </p>
+        </Reveal>
+
         {/* Recruitment / Culture Note */}
         <Reveal className="mt-12 p-6 bg-[#111827] border border-[#1F2937] flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
