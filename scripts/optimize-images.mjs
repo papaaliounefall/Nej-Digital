@@ -44,27 +44,46 @@ async function convertLogo() {
 }
 
 async function convertFavicons() {
-  const src = join(PUBLIC_DIR, ICON_SOURCE);
-  if (!existsSync(src)) {
-    console.warn(`Skip (not found): ${ICON_SOURCE}`);
-    return;
-  }
-
-  const icons = [
-    { file: 'favicon-16x16.png', size: 16 },
-    { file: 'favicon-32x32.png', size: 32 },
+  const rawSrc = join(PUBLIC_DIR, ICON_SOURCE);
+  const squareIcons = [
     { file: 'apple-touch-icon.png', size: 180 },
     { file: 'icon-512.png', size: 512 }
   ];
-  for (const { file, size } of icons) {
-    await sharp(src)
+
+  if (existsSync(rawSrc)) {
+    for (const { file, size } of squareIcons) {
+      await sharp(rawSrc).resize(size, size, { fit: 'cover' }).png().toFile(join(PUBLIC_DIR, file));
+    }
+    unlinkSync(rawSrc);
+    console.log(`${ICON_SOURCE} -> apple-touch-icon.png + icon-512.png`);
+  } else {
+    console.warn(`Skip (not found): ${ICON_SOURCE} — reusing the existing icon-512.png as the favicon source instead.`);
+  }
+
+  // Browser-tab favicons only get a circular mask (transparent corners).
+  // apple-touch-icon.png stays a plain square: iOS applies its own rounded
+  // mask, so a pre-clipped circle would double up oddly there.
+  const masterSquare = join(PUBLIC_DIR, 'icon-512.png');
+  if (!existsSync(masterSquare)) {
+    console.warn('Skip favicon generation: icon-512.png not found.');
+    return;
+  }
+
+  const roundFavicons = [
+    { file: 'favicon-16x16.png', size: 16 },
+    { file: 'favicon-32x32.png', size: 32 }
+  ];
+  for (const { file, size } of roundFavicons) {
+    const circleMask = Buffer.from(
+      `<svg width="${size}" height="${size}"><circle cx="${size / 2}" cy="${size / 2}" r="${size / 2}" fill="#fff"/></svg>`
+    );
+    await sharp(masterSquare)
       .resize(size, size, { fit: 'cover' })
+      .composite([{ input: circleMask, blend: 'dest-in' }])
       .png()
       .toFile(join(PUBLIC_DIR, file));
   }
-
-  unlinkSync(src);
-  console.log(`${ICON_SOURCE} -> favicon set`);
+  console.log('icon-512.png -> favicon-16x16.png + favicon-32x32.png (circular)');
 }
 
 async function convertTeamPhotos() {
