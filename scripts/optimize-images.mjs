@@ -15,7 +15,12 @@ import { fileURLToPath } from 'node:url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const PUBLIC_DIR = join(__dirname, '..', 'public');
 
+// Wide wordmark lockup — navbar/footer only (not square, don't use for icons).
 const LOGO_SOURCE = 'logo-nej.png';
+// Separate square mark — the only thing that should ever feed the favicon /
+// manifest icons. A wide wordmark shrunk to 16px is illegible; this is a
+// dedicated square asset made for that purpose.
+const ICON_SOURCE = 'nej-icon-source.png';
 
 // Team photos are dropped in with human-typed filenames (spaces, accents) —
 // map them to clean, URL-safe names as they're converted.
@@ -26,7 +31,7 @@ const TEAM_PHOTOS = [
   { src: 'Khady Cissé.jpeg', dest: 'khady-cisse.webp' }
 ];
 
-async function convertLogoAndFavicons() {
+async function convertLogo() {
   const src = join(PUBLIC_DIR, LOGO_SOURCE);
   if (!existsSync(src)) {
     console.warn(`Skip (not found): ${LOGO_SOURCE}`);
@@ -34,6 +39,16 @@ async function convertLogoAndFavicons() {
   }
 
   await sharp(src).resize({ height: 88 }).webp({ quality: 90 }).toFile(join(PUBLIC_DIR, 'logo-nej.webp'));
+  unlinkSync(src);
+  console.log(`${LOGO_SOURCE} -> logo-nej.webp`);
+}
+
+async function convertFavicons() {
+  const src = join(PUBLIC_DIR, ICON_SOURCE);
+  if (!existsSync(src)) {
+    console.warn(`Skip (not found): ${ICON_SOURCE}`);
+    return;
+  }
 
   const icons = [
     { file: 'favicon-16x16.png', size: 16 },
@@ -43,13 +58,13 @@ async function convertLogoAndFavicons() {
   ];
   for (const { file, size } of icons) {
     await sharp(src)
-      .resize(size, size, { fit: 'contain', background: { r: 10, g: 11, b: 14, alpha: 1 } })
+      .resize(size, size, { fit: 'cover' })
       .png()
       .toFile(join(PUBLIC_DIR, file));
   }
 
   unlinkSync(src);
-  console.log(`${LOGO_SOURCE} -> logo-nej.webp + favicon set`);
+  console.log(`${ICON_SOURCE} -> favicon set`);
 }
 
 async function convertTeamPhotos() {
@@ -68,6 +83,7 @@ async function convertTeamPhotos() {
   }
 }
 
-await convertLogoAndFavicons();
+await convertLogo();
+await convertFavicons();
 await convertTeamPhotos();
 console.log('Image optimization done.');
