@@ -23,9 +23,9 @@ export const TeamSection: React.FC = () => {
         </Reveal>
 
         {/* Core Team Members Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {TEAM_MEMBERS.map((member, idx) => (
-            <Reveal key={member.name} delayMs={(idx % 3) * 70} className="h-full">
+            <Reveal key={member.name} delayMs={(idx % 4) * 70} className="h-full">
             <div
               className="h-full bg-[#111827] border border-[#1F2937] overflow-hidden hover:border-[#3B82F6] transition-all duration-300 flex flex-col justify-between group"
             >

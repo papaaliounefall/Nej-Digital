@@ -156,8 +156,19 @@ export const DNA_VALUES: DnaValue[] = [
   }
 ];
 
-// TODO: un 4e profil (la présidente) reste à ajouter dès que sa photo est disponible.
 export const TEAM_MEMBERS: TeamMember[] = [
+  {
+    name: 'Khady Cissé',
+    role: 'Cofondatrice, Présidente & CEO',
+    secondaryRole: 'Designer',
+    bio: 'Présidente, CEO et cofondatrice de NEJ Digitale, elle porte la vision stratégique de l\'entreprise et contribue à la conception UX/UI des produits.',
+    location: 'Dakar, Sénégal',
+    photoUrl: '/khady-cisse.webp',
+    // TODO: renseigner les vraies URLs
+    linkedinUrl: '',
+    githubUrl: '',
+    specialty: 'UX/UI & Frontend'
+  },
   {
     name: 'Papa Alioune Fall',
     role: 'Cofondateur & Secrétaire Général',

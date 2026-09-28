@@ -27,7 +27,8 @@ const MAX_WIDTH = 1600;
 const TEAM_PHOTOS = [
   { src: 'Papa Alioune Fall.jpeg', dest: 'papa-alioune-fall.webp' },
   { src: 'Anifa djité.jpeg', dest: 'anifa-djite.webp' },
-  { src: 'Amadou Sow.jpeg', dest: 'amadou-sow.webp' }
+  { src: 'Amadou Sow.jpeg', dest: 'amadou-sow.webp' },
+  { src: 'Khady Cissé.jpeg', dest: 'khady-cisse.webp' }
 ];
 
 async function convertProductImages() {
