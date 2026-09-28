@@ -22,7 +22,7 @@ src/
   data/       → contenu du site (produits, services, équipe, actualités) — à éditer directement, pas de CMS
 ```
 
-Pour ajouter une actualité : éditer `src/data/newsData.ts`. Pour changer un service : `src/data/servicesData.ts`.
+Pour ajouter une actualité : éditer `src/data/newsData.ts` (`NEWS_POSTS`, vide pour l'instant — aucune annonce publique tant qu'aucun produit n'est en ligne). Pour changer un service : `src/data/servicesData.ts`.
 
 **Page Projets** : aucun produit n'est public pour l'instant, donc `/projets/` affiche un simple message d'attente (`src/pages/Projects.tsx`) plutôt que des fiches produits (pour éviter d'exposer des captures d'écran/descriptions de produits non lancés). Les données produits existent déjà dans `src/data/nejData.ts` (`PRODUCTS`) et les composants `ProjectsGrid`/`ProductInfoModal` sont prêts dans `src/components/` — dès qu'un premier produit est réellement en ligne, remettre `<ProjectsGrid />` dans `Projects.tsx` pour l'afficher.
 
@@ -57,5 +57,5 @@ Pour déployer manuellement ailleurs : `npm run build`, puis uploader le contenu
 
 - Renseigner un vrai numéro de téléphone dans `src/pages/Contact.tsx` (marqué `TODO` dans le code).
 - Renseigner les LinkedIn/GitHub de Khady Cissé et Amadou Sow dans `src/data/nejData.ts` (marqués `TODO`).
-- Remplacer les 3 actualités d'exemple dans `src/data/newsData.ts` par de vraies actualités.
+- Ajouter de vraies actualités dans `src/data/newsData.ts` dès qu'il y en a (la page affiche un état vide en attendant).
 - Réactiver la page Projets (voir section "Page Projets" ci-dessus) dès qu'un produit est en ligne.

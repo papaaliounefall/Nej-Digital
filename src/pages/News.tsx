@@ -21,29 +21,37 @@ export const News: React.FC = () => {
           </p>
         </Reveal>
 
-        <div className="space-y-6">
-          {NEWS_POSTS.map((post, idx) => (
-            <Reveal key={post.slug} delayMs={idx * 80}>
-              <article className="bg-[#111827] border border-[#1F2937] p-6 sm:p-8 hover:border-[#3B82F6] transition-all duration-300">
-                <div className="flex flex-wrap items-center gap-3 mb-4">
-                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider px-2.5 py-1 bg-[#0A0B0E] text-[#3B82F6] border border-[#1F2937]">
-                    {post.tag}
-                  </span>
-                  <span className="text-[10px] font-mono text-[#6B7280] uppercase tracking-wider flex items-center gap-1.5">
-                    <Calendar className="w-3 h-3" />
-                    {formatDate(post.date)}
-                  </span>
-                </div>
-                <h2 className="font-display font-bold text-xl sm:text-2xl text-white mb-3">
-                  {post.title}
-                </h2>
-                <p className="text-sm sm:text-base text-[#9CA3AF] leading-relaxed">
-                  {post.excerpt}
-                </p>
-              </article>
-            </Reveal>
-          ))}
-        </div>
+        {NEWS_POSTS.length === 0 ? (
+          <Reveal className="p-10 bg-[#111827] border border-[#1F2937] text-center">
+            <p className="text-sm sm:text-base text-[#9CA3AF]">
+              Aucune actualité publiée pour l'instant. Revenez bientôt.
+            </p>
+          </Reveal>
+        ) : (
+          <div className="space-y-6">
+            {NEWS_POSTS.map((post, idx) => (
+              <Reveal key={post.slug} delayMs={idx * 80}>
+                <article className="bg-[#111827] border border-[#1F2937] p-6 sm:p-8 hover:border-[#3B82F6] transition-all duration-300">
+                  <div className="flex flex-wrap items-center gap-3 mb-4">
+                    <span className="text-[10px] font-mono font-bold uppercase tracking-wider px-2.5 py-1 bg-[#0A0B0E] text-[#3B82F6] border border-[#1F2937]">
+                      {post.tag}
+                    </span>
+                    <span className="text-[10px] font-mono text-[#6B7280] uppercase tracking-wider flex items-center gap-1.5">
+                      <Calendar className="w-3 h-3" />
+                      {formatDate(post.date)}
+                    </span>
+                  </div>
+                  <h2 className="font-display font-bold text-xl sm:text-2xl text-white mb-3">
+                    {post.title}
+                  </h2>
+                  <p className="text-sm sm:text-base text-[#9CA3AF] leading-relaxed">
+                    {post.excerpt}
+                  </p>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );
