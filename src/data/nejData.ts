@@ -153,15 +153,15 @@ export const DNA_VALUES: DnaValue[] = [
 export const TEAM_MEMBERS: TeamMember[] = [
   {
     name: 'Khady Cissé',
-    role: 'Cofondatrice, Présidente & CEO',
-    secondaryRole: 'Designer',
-    bio: 'Présidente, CEO et cofondatrice de NEJ Digitale, elle porte la vision stratégique de l\'entreprise et contribue à la conception UX/UI des produits.',
+    role: 'Cofondatrice & Présidente',
+    secondaryRole: 'Developer',
+    bio: 'Présidente et cofondatrice de NEJ Digitale, elle porte la vision stratégique de l\'entreprise et contribue au développement des produits.',
     location: 'Dakar, Sénégal',
     photoUrl: '/khady-cisse.webp',
     // TODO: renseigner les vraies URLs
     linkedinUrl: '',
     githubUrl: '',
-    specialty: 'UX/UI & Frontend'
+    specialty: 'Développeuse Full Stack'
   },
   {
     name: 'Papa Alioune Fall',
