@@ -12,7 +12,6 @@ export interface Product {
   }[];
   status: 'Production' | 'Déploiement' | 'Beta Active';
   targetAudience: string;
-  imageUrl: string;
   liveUrl?: string;
 }
 

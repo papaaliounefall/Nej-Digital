@@ -1,6 +1,7 @@
 import React from 'react';
 import { X, ArrowRight } from 'lucide-react';
 import { Product } from '../types';
+import { getProductIcon } from '../lib/productIcons';
 import { useModalDismiss } from '../hooks/useModalDismiss';
 
 interface ProductInfoModalProps {
@@ -15,6 +16,8 @@ export const ProductInfoModal: React.FC<ProductInfoModalProps> = ({ product, onC
   useModalDismiss(product !== null, onClose);
 
   if (!product) return null;
+
+  const Icon = getProductIcon(product.id);
 
   return (
     <div
@@ -55,14 +58,14 @@ export const ProductInfoModal: React.FC<ProductInfoModalProps> = ({ product, onC
           {product.tagline}
         </p>
 
-        {/* Real Product Screenshot */}
-        <div className="mb-8 border border-[#1F2937] overflow-hidden">
-          <img
-            src={product.imageUrl}
-            alt={`Aperçu de l'interface ${product.name}`}
-            loading="lazy"
-            className="w-full h-auto object-cover object-top"
-          />
+        {/* No real screenshot: products aren't public yet, so no UI to expose to copycats. */}
+        <div className="mb-8 relative h-40 overflow-hidden bg-[#0A0B0E] border border-[#1F2937] flex items-center justify-center">
+          <span className="absolute -right-3 -bottom-8 font-display font-black text-[130px] leading-none text-[#111827] select-none" aria-hidden="true">
+            {product.number}
+          </span>
+          <div className="relative z-10 w-16 h-16 bg-[#111827] border border-[#1F2937] flex items-center justify-center text-[#3B82F6]">
+            <Icon className="w-7 h-7" />
+          </div>
         </div>
 
         {/* Narrative: what we built and why — no mechanism-level detail */}

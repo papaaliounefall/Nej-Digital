@@ -1,21 +1,10 @@
 import React, { useState } from 'react';
-import { ShoppingBag, GraduationCap, Sprout, Landmark, Trophy, Car, ArrowUpRight, Layers } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import { PRODUCTS } from '../data/nejData';
 import { Product } from '../types';
+import { getProductIcon } from '../lib/productIcons';
 import { ProductInfoModal } from './ProductInfoModal';
 import { Reveal } from './Reveal';
-
-const getProductIcon = (id: string) => {
-  switch (id) {
-    case 'sunumall': return ShoppingBag;
-    case 'orientasn': return GraduationCap;
-    case 'agrimarket': return Sprout;
-    case 'hadrasmart': return Landmark;
-    case 'minifoot': return Trophy;
-    case 'sunucar': return Car;
-    default: return Layers;
-  }
-};
 
 interface ProjectsGridProps {
   /** If set, only render the first N products (used for the Home preview). */
@@ -37,14 +26,14 @@ export const ProjectsGrid: React.FC<ProjectsGridProps> = ({ limit }) => {
               className="h-full bg-[#111827] border border-[#1F2937] overflow-hidden hover:border-[#3B82F6] transition-all duration-300 flex flex-col justify-between group"
             >
               <div>
-                <div className="relative h-44 overflow-hidden bg-[#0A0B0E]">
-                  <img
-                    src={product.imageUrl}
-                    alt={`Aperçu de l'interface ${product.name}`}
-                    loading="lazy"
-                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#111827] via-transparent to-transparent" />
+                {/* No real screenshot: products aren't public yet, so no UI to expose to copycats. */}
+                <div className="relative h-44 overflow-hidden bg-[#0A0B0E] flex items-center justify-center">
+                  <span className="absolute -right-3 -bottom-8 font-display font-black text-[120px] leading-none text-[#111827] select-none" aria-hidden="true">
+                    {product.number}
+                  </span>
+                  <div className="relative z-10 w-14 h-14 bg-[#111827] border border-[#1F2937] flex items-center justify-center text-[#3B82F6] group-hover:bg-[#3B82F6] group-hover:text-white transition-colors">
+                    <Icon className="w-6 h-6" />
+                  </div>
                   <span className="absolute top-3 left-3 text-[10px] font-mono font-bold uppercase tracking-wider px-2.5 py-1 bg-[#0A0B0E]/90 border border-[#1F2937] text-white">
                     {product.status}
                   </span>

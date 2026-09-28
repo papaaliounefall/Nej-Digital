@@ -54,7 +54,7 @@ export const Hero: React.FC = () => {
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-10">
               <a
                 id="hero-cta-projects"
-                href="#projets-preview"
+                href="/projets/"
                 className="bg-[#3B82F6] text-white px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-blue-600 transition-all text-center inline-flex items-center justify-center gap-3 active:scale-95 shadow-lg shadow-blue-500/10"
               >
                 <span>Découvrir nos projets</span>

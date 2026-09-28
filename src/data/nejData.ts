@@ -21,8 +21,7 @@ export const PRODUCTS: Product[] = [
       { label: 'Support', value: '24/7' }
     ],
     status: 'Déploiement',
-    targetAudience: 'Boutiques, commerçants et artisans sénégalais, acheteurs en ligne',
-    imageUrl: '/SunuMall.webp'
+    targetAudience: 'Boutiques, commerçants et artisans sénégalais, acheteurs en ligne'
   },
   {
     id: 'orientasn',
@@ -39,8 +38,7 @@ export const PRODUCTS: Product[] = [
       { label: 'Couverture', value: 'Sénégal' }
     ],
     status: 'Déploiement',
-    targetAudience: 'Bacheliers, lycéens, établissements scolaires et universitaires',
-    imageUrl: '/Orientasn.webp'
+    targetAudience: 'Bacheliers, lycéens, établissements scolaires et universitaires'
   },
   {
     id: 'agrimarket',
@@ -57,8 +55,7 @@ export const PRODUCTS: Product[] = [
       { label: 'Cours', value: 'Temps réel' }
     ],
     status: 'Déploiement',
-    targetAudience: 'Producteurs, coopératives, transporteurs et acheteurs de gros',
-    imageUrl: '/AgriMarket.webp'
+    targetAudience: 'Producteurs, coopératives, transporteurs et acheteurs de gros'
   },
   {
     id: 'hadrasmart',
@@ -75,8 +72,7 @@ export const PRODUCTS: Product[] = [
       { label: 'Langues', value: '3' }
     ],
     status: 'Production',
-    targetAudience: 'Pèlerins, familles religieuses et comité d\'organisation (COSKAS)',
-    imageUrl: '/HadraSmart.webp'
+    targetAudience: 'Pèlerins, familles religieuses et comité d\'organisation (COSKAS)'
   },
   {
     id: 'minifoot',
@@ -93,8 +89,7 @@ export const PRODUCTS: Product[] = [
       { label: 'Gestion', value: 'Tableau de bord organisations' }
     ],
     status: 'Déploiement',
-    targetAudience: 'Joueurs amateurs, organisateurs de matchs, propriétaires de terrains synthétiques',
-    imageUrl: '/minifoot.webp'
+    targetAudience: 'Joueurs amateurs, organisateurs de matchs, propriétaires de terrains synthétiques'
   },
   {
     id: 'sunucar',
@@ -111,8 +106,7 @@ export const PRODUCTS: Product[] = [
       { label: 'Gestion', value: 'Flotte tout-en-un' }
     ],
     status: 'Beta Active',
-    targetAudience: 'Propriétaires de véhicules, loueurs professionnels, particuliers',
-    imageUrl: '/sunucar.webp'
+    targetAudience: 'Propriétaires de véhicules, loueurs professionnels, particuliers'
   }
 ];
 

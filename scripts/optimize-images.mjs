@@ -1,7 +1,12 @@
-// One-off image optimization pass: converts the product screenshots and logo
-// to WebP, generates the favicon/manifest icon set, and removes the raw PNGs
-// once their WebP replacements exist. Run manually with `npm run images:optimize`
-// whenever new source images are added — this is not part of the Vite build.
+// One-off image optimization pass: converts the logo and team photos to
+// WebP, generates the favicon/manifest icon set, and removes the raw
+// sources once their WebP replacements exist. Run manually with
+// `npm run images:optimize` whenever new source images are added — this is
+// not part of the Vite build.
+//
+// No product screenshots here on purpose: none of the products are public
+// yet, so no real UI is shown on the site (see ProjectsGrid/ProductInfoModal)
+// — nothing to expose to copycats before launch.
 import sharp from 'sharp';
 import { existsSync, unlinkSync } from 'node:fs';
 import { join, dirname } from 'node:path';
@@ -10,17 +15,7 @@ import { fileURLToPath } from 'node:url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const PUBLIC_DIR = join(__dirname, '..', 'public');
 
-const PRODUCT_IMAGES = [
-  'SunuMall.png',
-  'Orientasn.png',
-  'AgriMarket.png',
-  'HadraSmart.png',
-  'minifoot.png',
-  'sunucar.png'
-];
-
 const LOGO_SOURCE = 'logo-nej.png';
-const MAX_WIDTH = 1600;
 
 // Team photos are dropped in with human-typed filenames (spaces, accents) —
 // map them to clean, URL-safe names as they're converted.
@@ -30,23 +25,6 @@ const TEAM_PHOTOS = [
   { src: 'Amadou Sow.jpeg', dest: 'amadou-sow.webp' },
   { src: 'Khady Cissé.jpeg', dest: 'khady-cisse.webp' }
 ];
-
-async function convertProductImages() {
-  for (const file of PRODUCT_IMAGES) {
-    const src = join(PUBLIC_DIR, file);
-    if (!existsSync(src)) {
-      console.warn(`Skip (not found): ${file}`);
-      continue;
-    }
-    const dest = join(PUBLIC_DIR, file.replace(/\.png$/i, '.webp'));
-    await sharp(src)
-      .resize({ width: MAX_WIDTH, withoutEnlargement: true })
-      .webp({ quality: 80 })
-      .toFile(dest);
-    unlinkSync(src);
-    console.log(`${file} -> ${file.replace(/\.png$/i, '.webp')}`);
-  }
-}
 
 async function convertLogoAndFavicons() {
   const src = join(PUBLIC_DIR, LOGO_SOURCE);
@@ -90,7 +68,6 @@ async function convertTeamPhotos() {
   }
 }
 
-await convertProductImages();
 await convertLogoAndFavicons();
 await convertTeamPhotos();
 console.log('Image optimization done.');
