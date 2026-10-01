@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
-import { Linkedin, Instagram, Facebook, Twitter, Github, ArrowUp, X } from 'lucide-react';
-import { useModalDismiss } from '../hooks/useModalDismiss';
+import React from 'react';
+import { Linkedin, Instagram, Facebook, Twitter, Github, ArrowUp } from 'lucide-react';
 
 interface FooterLink {
   label: string;
@@ -8,12 +7,6 @@ interface FooterLink {
 }
 
 export const Footer: React.FC = () => {
-  const [legalModalOpen, setLegalModalOpen] = useState(false);
-  const [privacyModalOpen, setPrivacyModalOpen] = useState(false);
-
-  useModalDismiss(legalModalOpen, () => setLegalModalOpen(false));
-  useModalDismiss(privacyModalOpen, () => setPrivacyModalOpen(false));
-
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -47,8 +40,8 @@ export const Footer: React.FC = () => {
           {/* Brand Column */}
           <div className="lg:col-span-4 space-y-6">
             <div className="flex items-center gap-3">
-              <img src="/logo-nej.webp" alt="NEJ Digitale" className="h-11 w-auto" width={44} height={44} />
-              <div className="text-xs text-[#6B7280] uppercase tracking-wider">
+              <img src="/logo-nej.webp" alt="NEJ Digital" className="h-11 w-auto" width={44} height={44} />
+              <div className="text-xs text-[#8B93A1] uppercase tracking-wider">
                 Nouvelle Ère de la Jeunesse
               </div>
             </div>
@@ -58,7 +51,7 @@ export const Footer: React.FC = () => {
             </p>
 
             <p className="text-xs text-[#9CA3AF] leading-relaxed max-w-sm">
-              Startup technologique et digitale africaine. Nous concevons, développons et déployons des solutions logicielles d'utilité publique et d'impact économique majeur.
+              Entreprise technologique et digitale sénégalaise. Nous concevons, développons et déployons des solutions logicielles d'utilité publique et d'impact économique majeur.
             </p>
 
             {/* Social Icons */}
@@ -68,7 +61,7 @@ export const Footer: React.FC = () => {
                 target="_blank"
                 rel="noreferrer"
                 className="w-9 h-9 bg-[#111827] hover:bg-[#3B82F6] hover:text-white border border-[#1F2937] flex items-center justify-center text-slate-300 transition-colors"
-                aria-label="LinkedIn NEJ Digitale"
+                aria-label="LinkedIn NEJ Digital"
               >
                 <Linkedin className="w-4 h-4" />
               </a>
@@ -77,7 +70,7 @@ export const Footer: React.FC = () => {
                 target="_blank"
                 rel="noreferrer"
                 className="w-9 h-9 bg-[#111827] hover:bg-[#3B82F6] hover:text-white border border-[#1F2937] flex items-center justify-center text-slate-300 transition-colors"
-                aria-label="Instagram NEJ Digitale"
+                aria-label="Instagram NEJ Digital"
               >
                 <Instagram className="w-4 h-4" />
               </a>
@@ -86,7 +79,7 @@ export const Footer: React.FC = () => {
                 target="_blank"
                 rel="noreferrer"
                 className="w-9 h-9 bg-[#111827] hover:bg-[#3B82F6] hover:text-white border border-[#1F2937] flex items-center justify-center text-slate-300 transition-colors"
-                aria-label="Facebook NEJ Digitale"
+                aria-label="Facebook NEJ Digital"
               >
                 <Facebook className="w-4 h-4" />
               </a>
@@ -95,7 +88,7 @@ export const Footer: React.FC = () => {
                 target="_blank"
                 rel="noreferrer"
                 className="w-9 h-9 bg-[#111827] hover:bg-[#3B82F6] hover:text-white border border-[#1F2937] flex items-center justify-center text-slate-300 transition-colors"
-                aria-label="X (Twitter) NEJ Digitale"
+                aria-label="X (Twitter) NEJ Digital"
               >
                 <Twitter className="w-4 h-4" />
               </a>
@@ -104,7 +97,7 @@ export const Footer: React.FC = () => {
                 target="_blank"
                 rel="noreferrer"
                 className="w-9 h-9 bg-[#111827] hover:bg-[#3B82F6] hover:text-white border border-[#1F2937] flex items-center justify-center text-slate-300 transition-colors"
-                aria-label="GitHub NEJ Digitale"
+                aria-label="GitHub NEJ Digital"
               >
                 <Github className="w-4 h-4" />
               </a>
@@ -137,23 +130,23 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Bar: Copyright & Legal */}
-        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-mono text-[#6B7280]">
+        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-mono text-[#8B93A1]">
           <div className="flex flex-wrap items-center gap-4 text-center md:text-left">
-            <span>© 2026 NEJ Digitale. Tous droits réservés.</span>
+            <span>© 2026 NEJ Digital. Tous droits réservés.</span>
             <span className="hidden sm:inline text-[#374151]">|</span>
-            <button
-              onClick={() => setLegalModalOpen(true)}
-              className="hover:text-[#3B82F6] transition-colors underline underline-offset-4 cursor-pointer"
+            <a
+              href="/mentions-legales/"
+              className="hover:text-[#3B82F6] transition-colors underline underline-offset-4"
             >
               Mentions légales
-            </button>
+            </a>
             <span className="hidden sm:inline text-[#374151]">|</span>
-            <button
-              onClick={() => setPrivacyModalOpen(true)}
-              className="hover:text-[#3B82F6] transition-colors underline underline-offset-4 cursor-pointer"
+            <a
+              href="/confidentialite/"
+              className="hover:text-[#3B82F6] transition-colors underline underline-offset-4"
             >
               Politique de confidentialité
-            </button>
+            </a>
           </div>
 
           {/* Back to top */}
@@ -167,74 +160,6 @@ export const Footer: React.FC = () => {
         </div>
 
       </div>
-
-      {/* Mentions Légales Modal */}
-      {legalModalOpen && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-fadeIn"
-          onClick={() => setLegalModalOpen(false)}
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="legal-modal-title"
-        >
-          <div
-            className="relative w-full max-w-lg bg-[#111827] border border-[#1F2937] p-6 shadow-2xl text-left animate-scaleIn"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              onClick={() => setLegalModalOpen(false)}
-              className="absolute top-4 right-4 p-1.5 bg-[#0A0B0E] border border-[#1F2937] text-slate-400 hover:text-white"
-              aria-label="Fermer"
-            >
-              <X className="w-4 h-4" />
-            </button>
-            <h3 id="legal-modal-title" className="font-display font-bold text-xl text-white mb-4 uppercase">
-              Mentions Légales — NEJ Digitale
-            </h3>
-            <div className="text-xs text-[#9CA3AF] space-y-3 leading-relaxed">
-              <p><strong className="text-white">Éditeur :</strong> NEJ Digitale, startup technologique et digitale basée à Dakar, République du Sénégal. <em>(Statut juridique et numéro d'immatriculation à compléter dès l'enregistrement officiel de la société.)</em></p>
-              <p><strong className="text-white">Signification :</strong> Nouvelle Ère de la Jeunesse.</p>
-              <p><strong className="text-white">Siège social :</strong> Dakar, Sénégal. <em>(Adresse complète à préciser.)</em></p>
-              <p><strong className="text-white">Directeur de la publication :</strong> <em>À compléter par l'équipe fondatrice.</em></p>
-              <p><strong className="text-white">Contact :</strong> nejdigital0@gmail.com.</p>
-              <p><strong className="text-white">Hébergement :</strong> <em>À compléter une fois le site déployé chez un hébergeur.</em></p>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Politique de Confidentialité Modal */}
-      {privacyModalOpen && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-fadeIn"
-          onClick={() => setPrivacyModalOpen(false)}
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="privacy-modal-title"
-        >
-          <div
-            className="relative w-full max-w-lg bg-[#111827] border border-[#1F2937] p-6 shadow-2xl text-left animate-scaleIn"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              onClick={() => setPrivacyModalOpen(false)}
-              className="absolute top-4 right-4 p-1.5 bg-[#0A0B0E] border border-[#1F2937] text-slate-400 hover:text-white"
-              aria-label="Fermer"
-            >
-              <X className="w-4 h-4" />
-            </button>
-            <h3 id="privacy-modal-title" className="font-display font-bold text-xl text-white mb-4 uppercase">
-              Politique de Confidentialité & Protection des Données
-            </h3>
-            <div className="text-xs text-[#9CA3AF] space-y-3 leading-relaxed">
-              <p><strong className="text-white">Engagement :</strong> NEJ Digitale s'engage à respecter scrupuleusement la loi n° 2008-12 du 25 janvier 2008 relative à la protection des données à caractère personnel (CDP Sénégal) ainsi que les meilleurs standards internationaux.</p>
-              <p><strong className="text-white">Données collectées :</strong> Les formulaires de contact et d'expression de besoin recueillent uniquement les informations nécessaires au traitement professionnel de votre demande.</p>
-              <p><strong className="text-white">Sécurité :</strong> Toutes les transmissions bénéficient d'un chiffrement TLS 1.3 de bout en bout. Aucune donnée n'est revendue ou cédée à des tiers à des fins publicitaires.</p>
-              <p><strong className="text-white">Vos droits :</strong> Vous pouvez demander la modification ou suppression de vos données à tout moment via nejdigital0@gmail.com.</p>
-            </div>
-          </div>
-        </div>
-      )}
     </footer>
   );
 };

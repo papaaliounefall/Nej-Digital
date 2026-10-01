@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  Target, Globe, Zap, ArrowRight, ChevronRight,
+  Target, Globe, Zap, ArrowRight,
   Eye, Lightbulb, Hammer, RefreshCw,
   Flame, Sparkles, Activity, ShieldAlert, Rocket
 } from 'lucide-react';
@@ -19,7 +19,7 @@ export const IdentitySection: React.FC = () => {
       icon: Target,
       tag: 'Ancrage Terrain',
       title: 'Répondre aux réalités locales',
-      description: 'Nous refusons de copier aveuglément des modèles occidentaux inadaptés. Nos outils intègrent nativement les paiements mobiles (Wave, Orange Money), le multilinguisme et les réseaux intermittents.'
+      description: 'Nous privilégions des solutions pensées pour les réalités locales plutôt que des modèles importés tels quels. Nos outils intègrent nativement les paiements mobiles (Wave, Orange Money), le multilinguisme et les réseaux intermittents.'
     },
     {
       icon: Zap,
@@ -52,7 +52,7 @@ export const IdentitySection: React.FC = () => {
 
           <div className="space-y-4 text-base sm:text-lg text-[#9CA3AF] font-normal leading-relaxed border-l-2 border-[#3B82F6] pl-6">
             <p>
-              <strong className="text-white font-semibold">NEJ Digitale</strong> est une startup technologique qui transforme les idées et les besoins du quotidien en <span className="text-[#3B82F6] font-semibold">produits numériques utiles, accessibles et évolutifs</span>.
+              <strong className="text-white font-semibold">NEJ Digital</strong> est une entreprise technologique et digitale sénégalaise qui transforme les idées et les besoins du quotidien en <span className="text-[#3B82F6] font-semibold">produits numériques utiles, accessibles et évolutifs</span>.
             </p>
             <p className="text-[#9CA3AF]">
               Notre ambition est simple : créer depuis l'Afrique des technologies capables de répondre aux réalités locales tout en portant une vision internationale.
@@ -99,22 +99,20 @@ export const IdentitySection: React.FC = () => {
 
         {/* Method Strip (ex-Philosophie) — a one-line sequence, not a detailed methodology */}
         <Reveal className="mb-20">
-          <div className="text-[10px] font-mono text-[#6B7280] uppercase tracking-widest font-bold mb-5">
+          <div className="text-[10px] font-mono text-[#8B93A1] uppercase tracking-widest font-bold mb-5">
             Notre méthode, en quatre temps
           </div>
-          <div className="flex flex-wrap items-center gap-3 bg-[#111827] border border-[#1F2937] p-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-[#1F2937] border border-[#1F2937]">
             {PHILOSOPHY_PILLARS.map((pillar, idx) => {
               const Icon = METHOD_ICONS[idx];
               return (
-                <React.Fragment key={pillar.number}>
-                  <div className="flex items-center gap-2">
-                    <Icon className="w-4 h-4 text-[#3B82F6]" />
-                    <span className="font-display font-bold text-sm text-white">{pillar.title}</span>
+                <div key={pillar.number} className="bg-[#111827] p-5 flex items-start gap-3">
+                  <Icon className="w-4 h-4 text-[#3B82F6] mt-0.5 shrink-0" />
+                  <div>
+                    <div className="font-display font-bold text-sm text-white">{pillar.title}</div>
+                    <p className="text-xs text-[#9CA3AF] mt-1 leading-snug">{pillar.subtitle}</p>
                   </div>
-                  {idx < PHILOSOPHY_PILLARS.length - 1 && (
-                    <ChevronRight className="w-4 h-4 text-[#374151] shrink-0" />
-                  )}
-                </React.Fragment>
+                </div>
               );
             })}
           </div>
@@ -145,7 +143,7 @@ export const IdentitySection: React.FC = () => {
             Une nouvelle ère pour une nouvelle génération.
           </h2>
           <p className="text-base sm:text-lg text-[#9CA3AF] leading-relaxed mb-10">
-            NEJ Digitale veut contribuer à faire émerger une génération africaine capable de{' '}
+            NEJ Digital veut contribuer à faire émerger une génération africaine capable de{' '}
             <span className="text-white font-semibold">concevoir, développer et déployer</span>{' '}
             les technologies qui façonneront son avenir.
           </p>

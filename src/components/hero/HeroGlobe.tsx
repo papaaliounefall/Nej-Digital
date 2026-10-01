@@ -1,5 +1,5 @@
-import React, { useMemo, useRef } from 'react';
-import { Canvas, useFrame, useThree } from '@react-three/fiber';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
+import { Canvas, useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 import { Earth } from './Earth';
 import { Atmosphere } from './Atmosphere';
@@ -53,30 +53,40 @@ const GlobeScene: React.FC<{ reduceMotion: boolean }> = ({ reduceMotion }) => {
   );
 };
 
-/** Keeps the pixel ratio sane on very large / very small viewports. */
-const AdaptivePixelRatio: React.FC = () => {
-  const { gl } = useThree();
-  useMemo(() => {
-    gl.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-  }, [gl]);
-  return null;
-};
-
 export const HeroGlobe: React.FC = () => {
   const reduceMotion = useMemo(() => prefersReducedMotion(), []);
+  const containerRef = useRef<HTMLDivElement>(null);
+  // Same look everywhere, lighter cost where it matters: lower DPR cap on
+  // small/mobile viewports, and stop rendering entirely once the globe
+  // scrolls out of view (CPU/GPU/battery cost only while it's actually seen).
+  const [isMobile] = useState(() => typeof window !== 'undefined' && window.innerWidth < 768);
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    const node = containerRef.current;
+    if (!node) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsVisible(entry.isIntersecting),
+      { threshold: 0.01 }
+    );
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <Canvas
-      camera={{ position: [0, 0, 8.2], fov: 42 }}
-      gl={{ antialias: true, alpha: true, powerPreference: 'high-performance' }}
-      dpr={[1, 2]}
-    >
-      <AdaptivePixelRatio />
-      <ambientLight intensity={0.35} color="#4a6fa5" />
-      <directionalLight position={[-4, 3, 5]} intensity={1.4} color="#eaf2ff" />
-      <directionalLight position={[3, -2, -4]} intensity={0.25} color="#3B82F6" />
-      <Stars />
-      <GlobeScene reduceMotion={reduceMotion} />
-    </Canvas>
+    <div ref={containerRef} className="w-full h-full">
+      <Canvas
+        camera={{ position: [0, 0, 8.2], fov: 42 }}
+        gl={{ antialias: true, alpha: true, powerPreference: 'high-performance' }}
+        dpr={isMobile ? [1, 1] : [1, 2]}
+        frameloop={isVisible ? 'always' : 'never'}
+      >
+        <ambientLight intensity={0.35} color="#4a6fa5" />
+        <directionalLight position={[-4, 3, 5]} intensity={1.4} color="#eaf2ff" />
+        <directionalLight position={[3, -2, -4]} intensity={0.25} color="#3B82F6" />
+        <Stars />
+        <GlobeScene reduceMotion={reduceMotion} />
+      </Canvas>
+    </div>
   );
 };

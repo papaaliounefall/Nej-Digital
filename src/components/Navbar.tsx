@@ -22,6 +22,15 @@ export const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setMobileMenuOpen(false);
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [mobileMenuOpen]);
+
   return (
     <header
       id="main-navbar"
@@ -35,7 +44,7 @@ export const Navbar: React.FC = () => {
         <div className="flex items-center justify-between">
           {/* Brand Logo & Tag */}
           <a href="/" className="flex items-center gap-3 group">
-            <img src="/logo-nej.webp" alt="NEJ Digitale" className="h-9 w-auto" width={36} height={36} />
+            <img src="/logo-nej.webp" alt="NEJ Digital" className="h-9 w-auto" width={36} height={36} />
             <span className="hidden sm:inline font-display font-black text-sm tracking-tight text-[#F9FAFB] group-hover:text-[#3B82F6] transition-colors uppercase">
               Nouvelle ère de la jeunesse
             </span>
@@ -77,8 +86,10 @@ export const Navbar: React.FC = () => {
             </a>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 bg-[#111827] border border-[#1F2937] text-[#9CA3AF] hover:text-white"
-              aria-label="Toggle navigation"
+              className="p-2 bg-[#111827] border border-[#1F2937] text-[#9CA3AF] hover:text-white focus-visible:ring-2 focus-visible:ring-[#3B82F6]"
+              aria-label={mobileMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
+              aria-expanded={mobileMenuOpen}
+              aria-controls="mobile-menu"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
@@ -88,7 +99,7 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile Menu Drawer */}
       {mobileMenuOpen && (
-        <div className="xl:hidden bg-[#0A0B0E]/98 border-b border-[#1F2937] px-4 pt-4 pb-6 mt-3 animate-fadeIn">
+        <div id="mobile-menu" className="xl:hidden bg-[#0A0B0E]/98 border-b border-[#1F2937] px-4 pt-4 pb-6 mt-3 animate-fadeIn">
           <div className="flex flex-col gap-3">
             {navLinks.map((link) => (
               <a

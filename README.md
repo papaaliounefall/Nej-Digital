@@ -7,13 +7,16 @@ Site institutionnel de **NEJ Digital** (Nouvelle Ère de la Jeunesse Digitale). 
 Chaque page est un vrai fichier HTML statique (bon pour le SEO, pas de routeur JS) :
 
 ```
-index.html            → Accueil            (/)
-a-propos/index.html   → À propos           (/a-propos/)
-services/index.html   → Nos services       (/services/)
-projets/index.html    → Nos projets        (/projets/)
-equipe/index.html     → Notre équipe       (/equipe/)
-actualites/index.html → Actualités         (/actualites/)
-contact/index.html    → Contact            (/contact/)
+index.html                  → Accueil                    (/)
+a-propos/index.html         → À propos                   (/a-propos/)
+services/index.html         → Nos services               (/services/)
+projets/index.html          → Nos projets                (/projets/)
+equipe/index.html           → Notre équipe               (/equipe/)
+actualites/index.html       → Actualités                 (/actualites/)
+contact/index.html          → Contact                    (/contact/)
+mentions-legales/index.html → Mentions légales           (/mentions-legales/)
+confidentialite/index.html  → Politique de confidentialité (/confidentialite/)
+404.html                    → Page 404 (servie par Vercel pour toute URL inconnue)
 
 src/
   entries/    → un point d'entrée React par page (monte <Layout><Page /></Layout>)
@@ -55,7 +58,12 @@ Pour déployer manuellement ailleurs : `npm run build`, puis uploader le contenu
 
 ## À faire avant mise en ligne officielle
 
-- Renseigner un vrai numéro de téléphone dans `src/pages/Contact.tsx` (marqué `TODO` dans le code).
-- Renseigner les LinkedIn/GitHub de Khady Cissé et Amadou Sow dans `src/data/nejData.ts` (marqués `TODO`).
+- Renseigner un vrai numéro de téléphone si vous en voulez un sur `/contact/` (retiré pour l'instant, faute de numéro confirmé).
+- Renseigner les LinkedIn/GitHub de Khady Cissé et Amadou Sow dans `src/data/nejData.ts`.
+- Compléter les mentions légales (`src/pages/MentionsLegales.tsx`) avec le numéro d'immatriculation et l'adresse complète dès l'enregistrement officiel de la société — volontairement omis plutôt que laissés en `(à compléter)`.
 - Ajouter de vraies actualités dans `src/data/newsData.ts` dès qu'il y en a (la page affiche un état vide en attendant).
 - Réactiver la page Projets (voir section "Page Projets" ci-dessus) dès qu'un produit est en ligne.
+
+## Régénérer l'image Open Graph
+
+`public/og-image.png` (1200×630, utilisée pour les aperçus de partage) est générée depuis `public/icon-512.png` par `npm run images:optimize` (fonction `generateOgImage` dans `scripts/optimize-images.mjs`). Elle se régénère automatiquement à chaque exécution du script.

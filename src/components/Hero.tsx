@@ -35,7 +35,7 @@ export const Hero: React.FC = () => {
           {/* Left: Typography & Intent — ~40% on desktop */}
           <div className="lg:col-span-5 relative z-10">
             <div className="text-[11px] tracking-[0.3em] uppercase font-bold mb-6" style={{ color: '#9CA3AF' }}>
-              <span style={{ color: '#3B82F6' }}>NEJ Digitale</span>
+              <span style={{ color: '#3B82F6' }}>NEJ Digital</span>
               <span className="mx-2" style={{ color: '#374151' }}>/</span>
               Nouvelle ère de la jeunesse
             </div>
@@ -57,7 +57,7 @@ export const Hero: React.FC = () => {
                 href="/projets/"
                 className="bg-[#3B82F6] text-white px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-blue-600 transition-all text-center inline-flex items-center justify-center gap-3 active:scale-95 shadow-lg shadow-blue-500/10"
               >
-                <span>Découvrir nos projets</span>
+                <span>Nos projets</span>
                 <ArrowRight className="w-4 h-4" />
               </a>
 
@@ -75,15 +75,15 @@ export const Hero: React.FC = () => {
             {/* Micro Pillars */}
             <div className="pt-6 border-t grid grid-cols-3 gap-3 sm:gap-6 text-left" style={{ borderColor: '#1a2030' }}>
               <div>
-                <span className="text-[10px] uppercase tracking-wide font-bold block mb-1" style={{ color: '#6B7280' }}>Écosystème</span>
-                <div className="font-display font-black text-lg sm:text-2xl" style={{ color: '#F5F5F2' }}>Plusieurs Produits</div>
+                <span className="text-[10px] uppercase tracking-wide font-bold block mb-1" style={{ color: '#8B93A1' }}>Écosystème</span>
+                <div className="font-display font-black text-lg sm:text-2xl" style={{ color: '#F5F5F2' }}>En développement</div>
               </div>
               <div>
-                <span className="text-[10px] uppercase tracking-wide font-bold block mb-1" style={{ color: '#6B7280' }}>Territoire</span>
+                <span className="text-[10px] uppercase tracking-wide font-bold block mb-1" style={{ color: '#8B93A1' }}>Territoire</span>
                 <div className="font-display font-black text-lg sm:text-2xl" style={{ color: '#3B82F6' }}>Sénégal</div>
               </div>
               <div>
-                <span className="text-[10px] uppercase tracking-wide font-bold block mb-1" style={{ color: '#6B7280' }}>Ambition</span>
+                <span className="text-[10px] uppercase tracking-wide font-bold block mb-1" style={{ color: '#8B93A1' }}>Ambition</span>
                 <div className="font-display font-black text-lg sm:text-2xl" style={{ color: '#F5F5F2' }}>Panafricaine</div>
               </div>
             </div>

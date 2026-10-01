@@ -18,6 +18,7 @@ export interface Product {
 export interface PhilosophyPillar {
   number: string;
   title: string;
+  subtitle: string;
 }
 
 export interface DnaValue {
@@ -40,6 +41,8 @@ export interface TeamMember {
 export interface ServiceDomain {
   title: string;
   description: string;
+  forWho: string;
+  deliverables: string;
 }
 
 export interface NewsPost {

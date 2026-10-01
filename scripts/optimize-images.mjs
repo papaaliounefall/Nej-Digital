@@ -86,6 +86,39 @@ async function convertFavicons() {
   console.log('icon-512.png -> favicon-16x16.png + favicon-32x32.png (circular)');
 }
 
+async function generateOgImage() {
+  const iconPath = join(PUBLIC_DIR, 'icon-512.png');
+  if (!existsSync(iconPath)) {
+    console.warn('Skip og-image.png: icon-512.png not found.');
+    return;
+  }
+
+  const width = 1200;
+  const height = 630;
+  const iconSize = 380;
+  const iconX = 90;
+  const iconY = Math.round((height - iconSize) / 2);
+  const textX = iconX + iconSize + 60;
+
+  const icon = await sharp(iconPath).resize(iconSize, iconSize).toBuffer();
+
+  const overlay = Buffer.from(`
+    <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
+      <rect width="100%" height="100%" fill="#0A0B0E"/>
+      <text x="${textX}" y="300" font-family="Arial, sans-serif" font-size="74" font-weight="900" fill="#F9FAFB">NEJ DIGITAL</text>
+      <text x="${textX}" y="352" font-family="Arial, sans-serif" font-size="30" font-weight="600" fill="#3B82F6">Nouvelle Ère de la Jeunesse Digitale</text>
+      <text x="${textX}" y="392" font-family="Arial, sans-serif" font-size="24" fill="#9CA3AF">Entreprise technologique et digitale sénégalaise</text>
+    </svg>
+  `);
+
+  await sharp(overlay)
+    .composite([{ input: icon, left: iconX, top: iconY }])
+    .png()
+    .toFile(join(PUBLIC_DIR, 'og-image.png'));
+
+  console.log('Generated og-image.png (1200x630)');
+}
+
 async function convertTeamPhotos() {
   for (const { src, dest } of TEAM_PHOTOS) {
     const srcPath = join(PUBLIC_DIR, src);
@@ -104,5 +137,6 @@ async function convertTeamPhotos() {
 
 await convertLogo();
 await convertFavicons();
+await generateOgImage();
 await convertTeamPhotos();
 console.log('Image optimization done.');

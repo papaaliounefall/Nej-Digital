@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Phone, MapPin, Linkedin, Instagram, Facebook, Twitter } from 'lucide-react';
+import { Mail, MapPin, Linkedin, Instagram, Facebook, Twitter } from 'lucide-react';
 import { SectionKicker } from '../components/SectionKicker';
 import { ContactForm } from '../components/ContactForm';
 import { Reveal } from '../components/Reveal';
@@ -14,7 +14,7 @@ export const Contact: React.FC = () => {
             Parlons de votre projet.
           </h1>
           <p className="text-[#9CA3AF] text-base sm:text-lg leading-relaxed">
-            Notre équipe à Dakar vous répond sous 24 heures ouvrées.
+            Notre équipe à Dakar vous répond sous 24 heures.
           </p>
         </Reveal>
 
@@ -27,43 +27,34 @@ export const Contact: React.FC = () => {
             <div className="p-5 bg-[#111827] border border-[#1F2937] flex items-start gap-3">
               <Mail className="w-4 h-4 text-[#3B82F6] mt-0.5 shrink-0" />
               <div>
-                <div className="text-[10px] font-mono text-[#6B7280] uppercase tracking-wider font-bold">E-mail</div>
+                <div className="text-[10px] font-mono text-[#8B93A1] uppercase tracking-wider font-bold">E-mail</div>
                 <a href="mailto:nejdigital0@gmail.com" className="text-sm font-semibold text-white hover:text-[#3B82F6] transition-colors">
                   nejdigital0@gmail.com
                 </a>
               </div>
             </div>
 
-            {/* TODO: remplacer par le vrai numéro professionnel avant mise en ligne */}
-            <div className="p-5 bg-[#111827] border border-[#1F2937] flex items-start gap-3">
-              <Phone className="w-4 h-4 text-[#3B82F6] mt-0.5 shrink-0" />
-              <div>
-                <div className="text-[10px] font-mono text-[#6B7280] uppercase tracking-wider font-bold">Téléphone</div>
-                <div className="text-sm font-semibold text-white">Sur demande par e-mail</div>
-              </div>
-            </div>
-
             <div className="p-5 bg-[#111827] border border-[#1F2937] flex items-start gap-3">
               <MapPin className="w-4 h-4 text-[#3B82F6] mt-0.5 shrink-0" />
               <div>
-                <div className="text-[10px] font-mono text-[#6B7280] uppercase tracking-wider font-bold">Localisation</div>
+                <div className="text-[10px] font-mono text-[#8B93A1] uppercase tracking-wider font-bold">Localisation</div>
                 <div className="text-sm font-semibold text-white">Dakar, Sénégal</div>
               </div>
             </div>
 
             <div className="p-5 bg-[#111827] border border-[#1F2937]">
-              <div className="text-[10px] font-mono text-[#6B7280] uppercase tracking-wider font-bold mb-3">Réseaux sociaux</div>
+              <div className="text-[10px] font-mono text-[#8B93A1] uppercase tracking-wider font-bold mb-3">Réseaux sociaux</div>
               <div className="flex items-center gap-3">
-                <a href="https://www.linkedin.com/company/nej-digital/" target="_blank" rel="noreferrer" aria-label="LinkedIn NEJ Digitale" className="w-9 h-9 bg-[#0A0B0E] hover:bg-[#3B82F6] hover:text-white border border-[#1F2937] flex items-center justify-center text-slate-300 transition-colors">
+                <a href="https://www.linkedin.com/company/nej-digital/" target="_blank" rel="noreferrer" aria-label="LinkedIn NEJ Digital" className="w-9 h-9 bg-[#0A0B0E] hover:bg-[#3B82F6] hover:text-white border border-[#1F2937] flex items-center justify-center text-slate-300 transition-colors">
                   <Linkedin className="w-4 h-4" />
                 </a>
-                <a href="https://www.instagram.com/nejdigital/" target="_blank" rel="noreferrer" aria-label="Instagram NEJ Digitale" className="w-9 h-9 bg-[#0A0B0E] hover:bg-[#3B82F6] hover:text-white border border-[#1F2937] flex items-center justify-center text-slate-300 transition-colors">
+                <a href="https://www.instagram.com/nejdigital/" target="_blank" rel="noreferrer" aria-label="Instagram NEJ Digital" className="w-9 h-9 bg-[#0A0B0E] hover:bg-[#3B82F6] hover:text-white border border-[#1F2937] flex items-center justify-center text-slate-300 transition-colors">
                   <Instagram className="w-4 h-4" />
                 </a>
-                <a href="https://www.facebook.com/share/1dDcuBtPmR/?mibextid=wwXIfr" target="_blank" rel="noreferrer" aria-label="Facebook NEJ Digitale" className="w-9 h-9 bg-[#0A0B0E] hover:bg-[#3B82F6] hover:text-white border border-[#1F2937] flex items-center justify-center text-slate-300 transition-colors">
+                <a href="https://www.facebook.com/share/1dDcuBtPmR/?mibextid=wwXIfr" target="_blank" rel="noreferrer" aria-label="Facebook NEJ Digital" className="w-9 h-9 bg-[#0A0B0E] hover:bg-[#3B82F6] hover:text-white border border-[#1F2937] flex items-center justify-center text-slate-300 transition-colors">
                   <Facebook className="w-4 h-4" />
                 </a>
-                <a href="https://x.com/NEJDigital26" target="_blank" rel="noreferrer" aria-label="X (Twitter) NEJ Digitale" className="w-9 h-9 bg-[#0A0B0E] hover:bg-[#3B82F6] hover:text-white border border-[#1F2937] flex items-center justify-center text-slate-300 transition-colors">
+                <a href="https://x.com/NEJDigital26" target="_blank" rel="noreferrer" aria-label="X (Twitter) NEJ Digital" className="w-9 h-9 bg-[#0A0B0E] hover:bg-[#3B82F6] hover:text-white border border-[#1F2937] flex items-center justify-center text-slate-300 transition-colors">
                   <Twitter className="w-4 h-4" />
                 </a>
               </div>

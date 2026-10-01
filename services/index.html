@@ -12,11 +12,11 @@
     <meta property="og:description" content="Cinq domaines d'intervention : développement, IA, transformation digitale, formation et entrepreneuriat numérique." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://nejdigital.sn/services/" />
-    <meta property="og:image" content="https://nejdigital.sn/icon-512.png" />
+    <meta property="og:image" content="https://nejdigital.sn/og-image.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Nos services — NEJ Digital" />
     <meta name="twitter:description" content="Développement, IA, transformation digitale, formation et entrepreneuriat numérique." />
-    <meta name="twitter:image" content="https://nejdigital.sn/icon-512.png" />
+    <meta name="twitter:image" content="https://nejdigital.sn/og-image.png" />
 
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -27,6 +27,50 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Keep in sync with src/data/servicesData.ts -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Service",
+          "name": "Développement de solutions numériques",
+          "provider": { "@id": "https://nejdigital.sn/#organization" },
+          "areaServed": "SN",
+          "description": "Conception et développement d'applications web et mobiles sur mesure, du MVP à la plateforme à l'échelle nationale."
+        },
+        {
+          "@type": "Service",
+          "name": "Intelligence artificielle & innovation",
+          "provider": { "@id": "https://nejdigital.sn/#organization" },
+          "areaServed": "SN",
+          "description": "Recommandation, scoring et analyse ciblés, au service d'un besoin fonctionnel mesurable."
+        },
+        {
+          "@type": "Service",
+          "name": "Transformation digitale",
+          "provider": { "@id": "https://nejdigital.sn/#organization" },
+          "areaServed": "SN",
+          "description": "Accompagnement des entreprises et institutions dans la digitalisation de leurs processus."
+        },
+        {
+          "@type": "Service",
+          "name": "Formation et accompagnement",
+          "provider": { "@id": "https://nejdigital.sn/#organization" },
+          "areaServed": "SN",
+          "description": "Transfert de compétences et montée en charge des équipes techniques locales."
+        },
+        {
+          "@type": "Service",
+          "name": "Entrepreneuriat et projets numériques",
+          "provider": { "@id": "https://nejdigital.sn/#organization" },
+          "areaServed": "SN",
+          "description": "Accompagnement des porteurs de projets sénégalais du cadrage jusqu'au lancement."
+        }
+      ]
+    }
+    </script>
   </head>
   <body class="bg-[#0A0B0E] text-[#F9FAFB] font-sans antialiased selection:bg-[#3B82F6]/30 selection:text-[#3B82F6]">
     <div id="root"></div>

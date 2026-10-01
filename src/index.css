@@ -83,3 +83,14 @@
   }
 }
 
+/* Visible keyboard focus everywhere — only for keyboard users (:focus-visible),
+   not on every mouse click. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+summary:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid #3B82F6;
+  outline-offset: 2px;
+}

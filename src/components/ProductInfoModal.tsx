@@ -85,13 +85,13 @@ export const ProductInfoModal: React.FC<ProductInfoModalProps> = ({ product, onC
 
         {/* Live Metrics Grid */}
         <div className="mb-8 p-5 bg-[#0A0B0E] border border-[#1F2937]">
-          <h3 className="text-[10px] font-mono uppercase tracking-wider text-[#6B7280] font-bold mb-3">
+          <h3 className="text-[10px] font-mono uppercase tracking-wider text-[#8B93A1] font-bold mb-3">
             Indicateurs de performance réels :
           </h3>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {product.metrics.map((m, idx) => (
               <div key={idx} className="p-3 bg-[#111827] border border-[#1F2937] text-center">
-                <div className="text-[10px] text-[#6B7280] uppercase tracking-wider font-mono">{m.label}</div>
+                <div className="text-[10px] text-[#8B93A1] uppercase tracking-wider font-mono">{m.label}</div>
                 <div className="text-lg sm:text-xl font-display font-black text-white mt-1">
                   {m.value}
                 </div>

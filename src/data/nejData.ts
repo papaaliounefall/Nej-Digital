@@ -111,10 +111,10 @@ export const PRODUCTS: Product[] = [
 ];
 
 export const PHILOSOPHY_PILLARS: PhilosophyPillar[] = [
-  { number: '01', title: 'Comprendre' },
-  { number: '02', title: 'Imaginer' },
-  { number: '03', title: 'Construire' },
-  { number: '04', title: 'Transformer' }
+  { number: '01', title: 'Comprendre', subtitle: 'Partir des réalités du terrain.' },
+  { number: '02', title: 'Imaginer', subtitle: 'Concevoir des solutions adaptées.' },
+  { number: '03', title: 'Construire', subtitle: 'Développer des produits fiables.' },
+  { number: '04', title: 'Transformer', subtitle: 'Faire évoluer avec les usages.' }
 ];
 
 export const DNA_VALUES: DnaValue[] = [
@@ -127,7 +127,7 @@ export const DNA_VALUES: DnaValue[] = [
   {
     name: 'Innovation',
     headline: 'Des idées transformées en solutions concrètes.',
-    description: 'L\'innovation chez NEJ Digitale n\'est pas un slogan abstrait : c\'est la capacité à livrer des outils fonctionnels qui règlent un vrai problème dès le premier jour.',
+    description: 'L\'innovation chez NEJ Digital n\'est pas un slogan abstrait : c\'est la capacité à livrer des outils fonctionnels qui règlent un vrai problème dès le premier jour.',
     indicator: 'Plusieurs produits en développement, chacun répondant à un goulet d\'étranglement concret.'
   },
   {
@@ -139,7 +139,7 @@ export const DNA_VALUES: DnaValue[] = [
   {
     name: 'Excellence',
     headline: 'Nous voulons construire des produits dont nous sommes fiers.',
-    description: 'Nous refusons les compromis sur la qualité du code, la précision du design et la fiabilité des infrastructures. Le "Made in Senegal" doit être synonyme d\'excellence.',
+    description: 'Nous attachons une attention particulière à la qualité du code, à la précision du design et à la fiabilité des infrastructures. Le "Made in Senegal" doit être synonyme d\'excellence.',
     indicator: 'Standards d\'ingénierie et d\'accessibilité stricts dès le premier déploiement.'
   },
   {
@@ -154,12 +154,10 @@ export const TEAM_MEMBERS: TeamMember[] = [
   {
     name: 'Khady Cissé',
     role: 'Cofondatrice & Présidente',
-    bio: 'Présidente et cofondatrice de NEJ Digitale, elle porte la vision stratégique de l\'entreprise et contribue au développement des produits.',
+    bio: 'Présidente et cofondatrice de NEJ Digital, elle porte la vision stratégique de l\'entreprise et contribue au développement des produits.',
     location: 'Dakar, Sénégal',
-    photoUrl: '/khady-cisse.webp',
-    // TODO: renseigner les vraies URLs
-    linkedinUrl: '',
-    githubUrl: ''
+    photoUrl: '/khady-cisse.webp'
+    // Pas de LinkedIn/GitHub pour l'instant — à ajouter dès qu'ils existent.
   },
   {
     name: 'Papa Alioune Fall',
@@ -173,7 +171,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
   {
     name: 'Anifa Djité',
     role: 'Responsable Communication',
-    bio: 'Responsable Communication de NEJ Digitale, également active sur le développement des produits.',
+    bio: 'Responsable Communication de NEJ Digital, elle pilote la communication externe de l\'entreprise tout en restant active sur le développement des produits.',
     location: 'Dakar, Sénégal',
     photoUrl: '/anifa-djite.webp',
     linkedinUrl: 'https://www.linkedin.com/in/anifa-djitté-7673a5350',
@@ -182,11 +180,9 @@ export const TEAM_MEMBERS: TeamMember[] = [
   {
     name: 'Amadou Sow',
     role: 'Responsable RH',
-    bio: 'Responsable des Ressources Humaines de NEJ Digitale, il pilote le recrutement, l\'intégration et l\'accompagnement des talents qui rejoignent l\'équipe.',
+    bio: 'Responsable des Ressources Humaines de NEJ Digital, il pilote le recrutement, l\'intégration et l\'accompagnement des talents qui rejoignent l\'équipe.',
     location: 'Dakar, Sénégal',
-    photoUrl: '/amadou-sow.webp',
-    // TODO: renseigner les vraies URLs
-    linkedinUrl: '',
-    githubUrl: ''
+    photoUrl: '/amadou-sow.webp'
+    // Pas de LinkedIn/GitHub pour l'instant — à ajouter dès qu'ils existent.
   }
 ];

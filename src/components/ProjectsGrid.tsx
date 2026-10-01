@@ -44,7 +44,7 @@ export const ProjectsGrid: React.FC<ProjectsGridProps> = ({ limit }) => {
                     <div className="w-8 h-8 bg-[#0A0B0E] border border-[#1F2937] flex items-center justify-center text-[#3B82F6] shrink-0">
                       <Icon className="w-4 h-4" />
                     </div>
-                    <span className="text-[10px] font-mono text-[#6B7280] uppercase tracking-wider">{product.category}</span>
+                    <span className="text-[10px] font-mono text-[#8B93A1] uppercase tracking-wider">{product.category}</span>
                   </div>
 
                   <h3 className="font-display font-black text-xl text-white mb-1 group-hover:text-[#3B82F6] transition-colors">
