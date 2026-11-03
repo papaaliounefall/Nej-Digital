@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NEJ Digital — Vidéo TikTok (aperçu)</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div id="stage"></div>
+  <div id="ui">
+    <button id="play">▶︎ Lecture</button>
+    <span id="tc">0.00 s</span>
+    <input id="scrub" type="range" min="0" max="90" step="0.0333" value="0" />
+    <label><input id="vo" type="checkbox" checked /> voix off</label>
+  </div>
+  <script type="module" src="./engine.js"></script>
+</body>
+</html>

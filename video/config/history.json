@@ -1,0 +1,151 @@
+{
+  "_doc": "Généré par tools/history.py depuis git log du site (hors dossier video/). Ne pas éditer à la main.",
+  "repository": "papaaliounefall/nej-digital",
+  "count": 24,
+  "commits": [
+    {
+      "hash": "1661185",
+      "date": "2026-09-27",
+      "time": "11:28",
+      "message": "Initial commit"
+    },
+    {
+      "hash": "aa3fa98",
+      "date": "2026-09-27",
+      "time": "12:26",
+      "message": "Fusionner Positionnement/Philosophie/ADN/Vision et avancer les Réalisations"
+    },
+    {
+      "hash": "b9aa375",
+      "date": "2026-09-27",
+      "time": "20:14",
+      "message": "Refonte du site en vitrine multi-pages légère et SEO-ready"
+    },
+    {
+      "hash": "8ae8df9",
+      "date": "2026-09-27",
+      "time": "20:51",
+      "message": "Simplifier le ton : moins vitrine techno, plus vitrine résultats"
+    },
+    {
+      "hash": "4852cb8",
+      "date": "2026-09-27",
+      "time": "21:20",
+      "message": "Ajouter un motion design léger (apparition au scroll)"
+    },
+    {
+      "hash": "b0a6a0c",
+      "date": "2026-09-27",
+      "time": "21:37",
+      "message": "Retirer la colonne Écosystème du footer"
+    },
+    {
+      "hash": "42921d8",
+      "date": "2026-09-27",
+      "time": "21:57",
+      "message": "Remplacer l'équipe fictive par les vrais profils NEJ Digitale"
+    },
+    {
+      "hash": "9413486",
+      "date": "2026-09-27",
+      "time": "22:12",
+      "message": "Affiner le profil de Papa Alioune Fall"
+    },
+    {
+      "hash": "623e327",
+      "date": "2026-09-27",
+      "time": "22:20",
+      "message": "Compléter les profils Anifa Djité et Amadou Sow"
+    },
+    {
+      "hash": "218a407",
+      "date": "2026-09-27",
+      "time": "22:35",
+      "message": "Ajuster les intitulés Anifa Djité et Papa Alioune Fall"
+    },
+    {
+      "hash": "84a13ff",
+      "date": "2026-09-27",
+      "time": "22:49",
+      "message": "Ajouter les vrais liens réseaux sociaux et ajuster les spécialités"
+    },
+    {
+      "hash": "9367f73",
+      "date": "2026-09-27",
+      "time": "23:08",
+      "message": "Corriger la description d'Anifa et préparer ses liens sociaux"
+    },
+    {
+      "hash": "821b6c7",
+      "date": "2026-09-27",
+      "time": "23:22",
+      "message": "Renseigner les vrais liens LinkedIn/GitHub de Papa et Anifa"
+    },
+    {
+      "hash": "4e72a4b",
+      "date": "2026-09-28",
+      "time": "11:15",
+      "message": "Ajouter Khady Cissé (Présidente, CEO & Cofondatrice) en tête d'équipe"
+    },
+    {
+      "hash": "1b630cf",
+      "date": "2026-09-28",
+      "time": "11:58",
+      "message": "Retirer toute présentation publique des projets tant qu'aucun n'est en ligne"
+    },
+    {
+      "hash": "9a2b647",
+      "date": "2026-09-28",
+      "time": "12:03",
+      "message": "Retirer les mentions de \"6 produits\" pour rester cohérent"
+    },
+    {
+      "hash": "2ae5f55",
+      "date": "2026-09-28",
+      "time": "12:08",
+      "message": "Préciser que l'équipe ne se limite pas aux 4 profils affichés"
+    },
+    {
+      "hash": "3a0607f",
+      "date": "2026-09-28",
+      "time": "13:07",
+      "message": "Ajuster le profil de Khady Cissé et le tiret des titres de page"
+    },
+    {
+      "hash": "8b2f174",
+      "date": "2026-09-28",
+      "time": "13:35",
+      "message": "Retirer les actualités placeholder qui nommaient des produits"
+    },
+    {
+      "hash": "92b58ab",
+      "date": "2026-09-28",
+      "time": "19:46",
+      "message": "Retirer les rôles secondaires et spécialités des fiches équipe"
+    },
+    {
+      "hash": "e589c79",
+      "date": "2026-09-28",
+      "time": "20:42",
+      "message": "Corriger le favicon : générer les icônes depuis un mark carré dédié"
+    },
+    {
+      "hash": "cdab7d8",
+      "date": "2026-09-28",
+      "time": "20:49",
+      "message": "Rendre les favicons ronds (masque circulaire)"
+    },
+    {
+      "hash": "75d4d9d",
+      "date": "2026-10-01",
+      "time": "12:23",
+      "message": "Finition professionnelle : nom, ton, accessibilité, perf, SEO, pages légales"
+    },
+    {
+      "hash": "a23be67",
+      "date": "2026-10-14",
+      "time": "16:05",
+      "message": "Ajouter RCCM, N.I.N.E.A, adresse et directrice aux mentions légales"
+    }
+  ]
+}

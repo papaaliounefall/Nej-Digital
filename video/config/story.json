@@ -1,0 +1,173 @@
+{
+  "_doc": "Source unique du récit. Les scènes, la narration (voix + sous-titres) et les textes à l'écran sont lus d'ici par voice.py, music.py, mix.py et le moteur d'animation. Après modification : npm run build. Dans 'text', *mots* = mise en valeur en bleu NEJ (sous-titres).",
+  "video": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "duration": 90,
+    "bpm": 96,
+    "siteUrl": "nejdigital.sn",
+    "brandName": "NEJ Digital"
+  },
+  "scenes": [
+    {
+      "id": "s1-hook",
+      "title": "Le hook",
+      "start": 0,
+      "end": 7.5
+    },
+    {
+      "id": "s2-debuts",
+      "title": "Les débuts",
+      "start": 7.5,
+      "end": 20
+    },
+    {
+      "id": "s3-difficultes",
+      "title": "Les difficultés",
+      "start": 20,
+      "end": 37.5
+    },
+    {
+      "id": "s4-construction",
+      "title": "La construction",
+      "start": 37.5,
+      "end": 55
+    },
+    {
+      "id": "s5-vision",
+      "title": "Notre vision",
+      "start": 55,
+      "end": 75
+    },
+    {
+      "id": "s6-conclusion",
+      "title": "La conclusion",
+      "start": 75,
+      "end": 90
+    }
+  ],
+  "voice": {
+    "_doc": "Voix PROVISOIRE de synthèse (Piper, hors-ligne). Pour la voix définitive : déposer les enregistrements de l'équipe dans assets/audio/vo/recorded/<id>.wav — ils remplacent automatiquement la synthèse (voir README).",
+    "model": "fr_FR-tom-medium",
+    "speaker": 0,
+    "lengthScale": 1.12,
+    "pronunciation": {
+      "NEJ": "Nèj"
+    }
+  },
+  "narration": [
+    {
+      "id": "n01",
+      "scene": "s1-hook",
+      "start": 1.4,
+      "display": "title",
+      "text": "Toute grande aventure commence quelque part."
+    },
+    {
+      "id": "n02",
+      "scene": "s1-hook",
+      "start": 4.6,
+      "display": "title",
+      "text": "Voici l'histoire de NEJ Digital."
+    },
+    {
+      "id": "n03",
+      "scene": "s2-debuts",
+      "start": 8.2,
+      "display": "caption",
+      "text": "Au départ, il n'y avait pas de grande structure."
+    },
+    {
+      "id": "n04",
+      "scene": "s2-debuts",
+      "start": 11.9,
+      "display": "caption",
+      "text": "Juste *une idée*, *une ambition…*"
+    },
+    {
+      "id": "n05",
+      "scene": "s2-debuts",
+      "start": 15.0,
+      "display": "caption",
+      "text": "et l'envie de construire quelque chose de différent grâce à la technologie."
+    },
+    {
+      "id": "n06",
+      "scene": "s3-difficultes",
+      "start": 20.6,
+      "display": "caption",
+      "text": "Mais entre avoir une idée et la concrétiser, il y a tout un *chemin.*"
+    },
+    {
+      "id": "n07",
+      "scene": "s3-difficultes",
+      "start": 25.4,
+      "display": "caption",
+      "text": "Des difficultés, des erreurs, des décisions à prendre…"
+    },
+    {
+      "id": "n08",
+      "scene": "s3-difficultes",
+      "start": 30.2,
+      "display": "caption",
+      "text": "des *nuits de travail*, et beaucoup de choses à apprendre."
+    },
+    {
+      "id": "n09",
+      "scene": "s4-construction",
+      "start": 38.0,
+      "display": "caption",
+      "text": "Petit à petit, nous avons appris à transformer nos idées en *projets concrets.*"
+    },
+    {
+      "id": "n10",
+      "scene": "s4-construction",
+      "start": 43.6,
+      "display": "caption",
+      "text": "Nous avons construit une équipe, développé notre vision…"
+    },
+    {
+      "id": "n11",
+      "scene": "s4-construction",
+      "start": 48.6,
+      "display": "caption",
+      "text": "et commencé à bâtir notre propre *écosystème numérique.*"
+    },
+    {
+      "id": "n12",
+      "scene": "s5-vision",
+      "start": 55.6,
+      "display": "caption",
+      "text": "Notre ambition est simple : concevoir des produits numériques *utiles, innovants et accessibles.*"
+    },
+    {
+      "id": "n13",
+      "scene": "s5-vision",
+      "start": 62.4,
+      "display": "caption",
+      "text": "Depuis l'Afrique, avec une vision qui *dépasse les frontières.*"
+    },
+    {
+      "id": "n14",
+      "scene": "s6-conclusion",
+      "start": 75.4,
+      "display": "caption",
+      "text": "Ce que vous voyez aujourd'hui n'est que *le début.*"
+    },
+    {
+      "id": "n15",
+      "scene": "s6-conclusion",
+      "start": 78.9,
+      "display": "caption",
+      "text": "Et nous avons décidé de vous emmener avec nous dans cette aventure."
+    },
+    {
+      "id": "n16",
+      "scene": "s6-conclusion",
+      "start": 83.4,
+      "display": "title",
+      "text": "Bienvenue dans les coulisses de NEJ Digital."
+    }
+  ]
+}
