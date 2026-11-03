@@ -1,0 +1,17 @@
+{
+  "_doc": "Emplacements prévus pour de VRAIES images/vidéos de l'équipe (aucune n'existe dans le dépôt). Déposer le fichier dans assets/footage/ et renseigner 'file' (ex. \"debuts-reunion.mp4\" ou \".jpg\"). Tant que 'file' est null, la scène utilise son animation de remplacement. Aperçu des emplacements : http://localhost:5190/video/engine/index.html?slots=1",
+  "slots": [
+    { "id": "S2-A", "scene": "s2-debuts", "start": 7.6, "end": 11.7,
+      "label": "Les débuts : photo ou vidéo d'une première réunion, d'un carnet, d'un tableau blanc",
+      "box": [140, 520, 800, 600], "file": null },
+    { "id": "S3-A", "scene": "s3-difficultes", "start": 30.0, "end": 35.3,
+      "label": "Nuits de travail : plan réel d'un écran / bureau le soir (sans mise en scène fictive)",
+      "box": [90, 300, 900, 520], "file": null },
+    { "id": "S4-A", "scene": "s4-construction", "start": 43.5, "end": 48.5,
+      "label": "L'équipe : vidéo réelle de l'équipe en discussion / au travail",
+      "box": [90, 280, 900, 1080], "file": null },
+    { "id": "S6-A", "scene": "s6-conclusion", "start": 78.8, "end": 83.3,
+      "label": "Coulisses : images réelles des locaux, de Dakar, de l'équipe",
+      "box": [90, 360, 900, 760], "file": null }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "name": "nej-digital-video-tiktok",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Projet de production de la vidéo TikTok storytelling NEJ Digital (9:16, 1080x1920, 30 fps). Indépendant du site.",
+  "scripts": {
+    "preview": "node tools/serve.mjs",
+    "capture": "node tools/capture-site.mjs",
+    "brand": "python3 tools/make_brand.py",
+    "history": "python3 tools/history.py",
+    "voice": "python3 tools/voice.py",
+    "music": "python3 tools/music.py",
+    "mix": "python3 tools/mix.py",
+    "srt": "python3 tools/srt.py",
+    "stills": "node tools/still.mjs --sheet 0 90 1.5",
+    "slots": "node tools/still.mjs --slots 9 32 46 81",
+    "render:frames": "node tools/render.mjs",
+    "export": "node tools/export.mjs",
+    "audio": "npm run voice && npm run music && npm run mix && npm run srt",
+    "build": "npm run audio && npm run render:frames && npm run export"
+  },
+  "dependencies": {
+    "@fontsource/plus-jakarta-sans": "5.2.8"
+  }
+}

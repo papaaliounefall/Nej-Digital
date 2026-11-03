@@ -1,0 +1,130 @@
+[
+  {
+    "id": "n01",
+    "start": 1.4,
+    "duration": 2.885,
+    "end": 4.285,
+    "source": "synthèse provisoire",
+    "key": "e883c64d7fc2"
+  },
+  {
+    "id": "n02",
+    "start": 4.6,
+    "duration": 2.524,
+    "end": 7.124,
+    "source": "synthèse provisoire",
+    "key": "42b78c552d2f"
+  },
+  {
+    "id": "n03",
+    "start": 8.2,
+    "duration": 3.129,
+    "end": 11.329,
+    "source": "synthèse provisoire",
+    "key": "cd109b54266a"
+  },
+  {
+    "id": "n04",
+    "start": 11.9,
+    "duration": 1.805,
+    "end": 13.705,
+    "source": "synthèse provisoire",
+    "key": "540a3e0cc942"
+  },
+  {
+    "id": "n05",
+    "start": 15.0,
+    "duration": 4.18,
+    "end": 19.18,
+    "source": "synthèse provisoire",
+    "key": "2a77eef01b66"
+  },
+  {
+    "id": "n06",
+    "start": 20.6,
+    "duration": 4.347,
+    "end": 24.947,
+    "source": "synthèse provisoire",
+    "key": "8dcca7775479"
+  },
+  {
+    "id": "n07",
+    "start": 25.4,
+    "duration": 3.723,
+    "end": 29.123,
+    "source": "synthèse provisoire",
+    "key": "69eab6daa506"
+  },
+  {
+    "id": "n08",
+    "start": 30.2,
+    "duration": 3.345,
+    "end": 33.545,
+    "source": "synthèse provisoire",
+    "key": "f250d9443c04"
+  },
+  {
+    "id": "n09",
+    "start": 38.0,
+    "duration": 4.779,
+    "end": 42.779,
+    "source": "synthèse provisoire",
+    "key": "fc39dba23622"
+  },
+  {
+    "id": "n10",
+    "start": 43.6,
+    "duration": 3.45,
+    "end": 47.05,
+    "source": "synthèse provisoire",
+    "key": "cbf37ced51ae"
+  },
+  {
+    "id": "n11",
+    "start": 48.6,
+    "duration": 3.797,
+    "end": 52.397,
+    "source": "synthèse provisoire",
+    "key": "62693bf149e7"
+  },
+  {
+    "id": "n12",
+    "start": 55.6,
+    "duration": 5.455,
+    "end": 61.055,
+    "source": "synthèse provisoire",
+    "key": "839d61a7902b"
+  },
+  {
+    "id": "n13",
+    "start": 62.4,
+    "duration": 4.092,
+    "end": 66.492,
+    "source": "synthèse provisoire",
+    "key": "4ab3c1c31f1e"
+  },
+  {
+    "id": "n14",
+    "start": 75.4,
+    "duration": 2.36,
+    "end": 77.76,
+    "source": "synthèse provisoire",
+    "key": "5583c7a7e349"
+  },
+  {
+    "id": "n15",
+    "start": 78.9,
+    "duration": 3.684,
+    "end": 82.584,
+    "source": "synthèse provisoire",
+    "key": "e898363f5cba"
+  },
+  {
+    "id": "n16",
+    "start": 83.4,
+    "duration": 2.808,
+    "end": 86.208,
+    "source": "synthèse provisoire",
+    "key": "3b400fa182db"
+  }
+]

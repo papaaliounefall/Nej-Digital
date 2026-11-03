@@ -1,0 +1,6 @@
+node_modules/
+# Rendus (régénérables avec `npm run build`) — trop lourds pour le dépôt
+output/
+# Pistes audio générées (régénérables)
+assets/audio/music/*.wav
+assets/audio/sfx/*.wav

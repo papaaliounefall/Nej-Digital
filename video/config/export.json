@@ -1,0 +1,9 @@
+{
+  "_doc": "Paramètres d'export (TikTok / Instagram Reels / YouTube Shorts) : MP4 H.264 High, 1080×1920, 30 i/s, yuv420p BT.709, AAC 48 kHz, faststart.",
+  "video": { "preset": "slow", "crf": 18, "profile": "high", "level": "4.2", "pixFmt": "yuv420p", "maxrate": "20M", "bufsize": "40M" },
+  "audio": { "codec": "aac", "bitrate": "320k", "sampleRate": 48000 },
+  "outputs": [
+    { "file": "NEJ-Digital_TikTok_1080x1920_VO.mp4", "audio": "output/audio/mix_vo.wav", "label": "Version complète avec voix off (provisoire)" },
+    { "file": "NEJ-Digital_TikTok_1080x1920_SansVoix.mp4", "audio": "output/audio/mix_music.wav", "label": "Version sans voix off : musique + sound design, textes à l'écran" }
+  ]
+}
