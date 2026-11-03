@@ -5,7 +5,7 @@ Il cible TikTok, Instagram Reels et YouTube Shorts.
 
 **Ce dossier est indépendant du site.** Il n'est pas inclus dans le build Vite (entrées listées dans
 `vite.config.ts`). Il ne modifie aucun fichier du site : il en **lit** seulement les ressources réelles
-(logo, photos, données, code, historique git).
+(logo, captures, données, code, historique git).
 
 ## Livrables (dans `output/`, régénérables)
 
@@ -81,12 +81,14 @@ Rendu partiel, utile pour vérifier une scène : `node tools/render.mjs --from 2
 
 ## Authenticité : ce qui est réel, ce qui est illustratif
 
-- **Réel (repris du dépôt)** : logo, couleurs, typographie, captures du site, photos et rôles de l'équipe,
+- **Réel (repris du dépôt)** : logo, couleurs, typographie, captures du site, titre et métiers de la page Équipe,
   méthode en 4 temps, domaines d'intervention, villes et connexions du globe, code de `Hero.tsx`,
   messages et heures des commits.
 - **Illustratif (motion design)** : la route, le réseau de points, le soulignement « erreur » dans l'éditeur.
   Ils sont présentés comme des illustrations, jamais comme des archives.
-- **Volontairement absent** : les noms et captures des produits. Le site a choisi de ne présenter aucun
+- **Volontairement absent** : les portraits individuels de l'équipe. L'équipe ne se limite pas aux profils
+  du site, elle est donc montrée comme un collectif (vraies images de groupe possibles via `config/media.json`).
+  Également absents : les noms et captures des produits. Le site a choisi de ne présenter aucun
   produit tant qu'aucun n'est en ligne (voir le README du site). Il n'y a ni faux témoignage ni fausse scène d'archive.
 
 ## Musique et sons

@@ -43,7 +43,7 @@ Les timecodes sont ceux du montage actuel (début de chaque réplique). Le texte
 *0:33 → 0:37 : pas de voix. Les verbes réels des commits défilent : Corriger. Ajuster. Affiner. Simplifier.*
 
 ### Scène 4 — La construction (0:37 → 0:55)
-*La méthode en quatre temps s'empile, l'équipe apparaît, puis l'écosystème.*
+*La méthode en quatre temps s'empile. L'équipe apparaît comme un collectif (« Derrière la technologie, des personnes. », avec ses trois métiers), puis l'écosystème.*
 
 | # | Début | Texte | Intention |
 |---|---|---|---|
@@ -63,7 +63,7 @@ Les timecodes sont ceux du montage actuel (début de chaque réplique). Le texte
 **« Conçus depuis l'Afrique. » · « Une ambition panafricaine. » · « La technologie de la nouvelle génération. »**
 
 ### Scène 6 — La conclusion (1:15 → 1:30)
-*Le globe redevient le carré bleu du début ; mosaïque du parcours ; logo ; carte finale.*
+*Le globe redevient le carré bleu du début ; mosaïque du parcours (sans portraits) ; logo ; carte finale.*
 
 | # | Début | Texte | Intention |
 |---|---|---|---|
@@ -71,7 +71,7 @@ Les timecodes sont ceux du montage actuel (début de chaque réplique). Le texte
 | n15 | 1:18.9 | Et nous avons décidé de vous emmener avec nous dans cette aventure. | Invitation, sourire. |
 | n16 | 1:23.4 | Bienvenue dans les coulisses de NEJ Digital. | Chaleureux, définitif. Le logo se forme. |
 
-**Carte finale (sans voix) :** logo · « L'aventure ne fait que commencer. » · `nej-digital.vercel.app`
+**Carte finale (sans voix) :** logo · « L'aventure ne fait que commencer. » · `nejdigital.sn`
 
 ---
 
@@ -97,8 +97,10 @@ Les timecodes sont ceux du montage actuel (début de chaque réplique). Le texte
 
 1. **Prononciation de « NEJ ».** La voix provisoire dit « Nèj » (comme « neige »). Si l'équipe épelle « N-E-J », l'enregistrement réel fera foi. Pour la voix de synthèse, modifier `voice.pronunciation` dans `config/story.json`.
 2. **Nom affiché.** À l'écran, le nom suit le logo et le site : **NEJ Digital** (Nouvelle Ère de la Jeunesse Digitale). « NEJ Digitale » et « NEJ Digital » se prononcent de la même façon, donc la voix ne change pas.
-3. **Faits montrés à l'écran.** Tous viennent du dépôt : premier commit (27/09/2026, 11 h 28), soirée de commits du 27/09 de 20 h 14 à 23 h 22, messages de décisions réels, équipe et rôles du site, méthode, domaines d'intervention, villes du globe. Aucune difficulté précise n'est inventée.
-4. **Produits.** Ils ne sont pas nommés, par cohérence avec le site (« aucune présentation publique des projets tant qu'aucun n'est en ligne »). La vidéo reprend le titre du site : *« Des solutions numériques en construction. »*
+3. **Faits montrés à l'écran.** Tous viennent du dépôt : premier commit (27/09/2026, 11 h 28), soirée de commits du 27/09 de 20 h 14 à 23 h 22, messages de décisions réels, titre et métiers de la page Équipe, méthode, domaines d'intervention, villes du globe. Aucune difficulté précise n'est inventée.
+4. **Équipe.** Pas de portraits individuels : l'équipe ne se limite pas aux 4 profils du site. Elle apparaît comme un collectif. Pour montrer de vraies personnes, une vidéo de groupe peut être ajoutée à l'emplacement S4-A.
+5. **Adresse affichée :** `nejdigital.sn` (modifiable dans `config/story.json` → `video.siteUrl`).
+6. **Produits.** Ils ne sont pas nommés, par cohérence avec le site (« aucune présentation publique des projets tant qu'aucun n'est en ligne »). La vidéo reprend le titre du site : *« Des solutions numériques en construction. »*
 
 ---
 

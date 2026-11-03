@@ -1,9 +1,9 @@
 // SCÈNE 6 — LA CONCLUSION (75 → 90 s)
 // Le globe se réduit au carré bleu du début : « ce n'est que le début » (rappel du hook).
 // Le carré s'ouvre en mosaïque du parcours — uniquement des éléments réels déjà vus
-// (équipe, captures du site, premier commit, heure du dernier commit de la soirée).
+// (captures du site, premier commit, heure du dernier commit, méthode, ambition).
 // La mosaïque se referme dans le carré, qui reprend sa place dans le logo.
-// Carte finale : logo, « L'aventure ne fait que commencer. », adresse du site.
+// Carte finale : logo, « L'aventure ne fait que commencer. », adresse du site (story.video.siteUrl).
 import { el, put, prog, ep, ease, kf, inOut, rng, clamp, lerp, BRAND } from '../engine/lib.js';
 
 export default {
@@ -21,23 +21,26 @@ export default {
     const TW = 300, TH = 400, G = 20, COLS = 4, ROWS = 4;
     const wall = el('div', { cls: 'abs', style: { left: 0, top: 0, width: (COLS * (TW + G)) + 'px', height: (ROWS * (TH + G)) + 'px', transformOrigin: '0 0' } }, root);
     const cap = f => ctx.base + 'assets/captures/' + f;
+    // Uniquement des éléments réels déjà vus. Pas de portraits individuels : l'équipe
+    // ne se limite pas aux profils affichés sur le site.
+    const decision = history.commits.find(c => c.message.startsWith('Simplifier le ton'));
     const tilesDef = [
-      { img: ctx.repo + 'public/khady-cisse.webp', pos: '50% 20%' },
+      { text: ["L'équipe", 'Derrière la technologie, des personnes.', 'ingénieurs · designers · terrain'], accent: true },
       { img: cap('mobile-home-hero.jpg'), pos: '50% 18%' },
       { text: ['Premier commit', first.message, `${first.date.split('-').reverse().join('.')} · ${first.time}`] },
-      { img: ctx.repo + 'public/papa-alioune-fall.webp', pos: '50% 20%' },
-      { img: cap('desktop-home-hero.jpg'), pos: '82% 50%' },
-      { img: ctx.repo + 'public/anifa-djite.webp', pos: '50% 20%' },
-      { text: ['27.09.2026', last ? last.time : '', 'dernier commit de la soirée'], big: true },
-      { img: cap('mobile-equipe.jpg'), pos: '50% 4%' },
       { img: cap('mobile-apropos.jpg'), pos: '50% 2%' },
-      { img: ctx.repo + 'public/amadou-sow.webp', pos: '50% 20%' },
-      { img: cap('mobile-projets.jpg'), pos: '50% 30%' },
-      { text: ['Notre méthode', 'Comprendre · Imaginer · Construire · Transformer', 'nej-digital'] },
-      { img: cap('desktop-apropos.jpg'), pos: '20% 40%' },
+      { img: cap('desktop-home-hero.jpg'), pos: '82% 50%' },
+      { text: ['Ancrage', "Construire depuis l'Afrique. Penser sans frontières.", 'Dakar, Sénégal'] },
+      { text: ['27.09.2026', last ? last.time : '', 'dernier commit de la soirée'], big: true },
       { img: cap('mobile-services.jpg'), pos: '50% 2%' },
-      { img: cap('desktop-equipe.jpg'), pos: '50% 60%' },
-      { img: cap('mobile-home-full.jpg'), pos: '50% 22%' }
+      { img: cap('mobile-projets.jpg'), pos: '50% 30%' },
+      { text: ['Notre méthode', 'Comprendre · Imaginer · Construire · Transformer', 'en quatre temps'] },
+      { img: cap('desktop-apropos.jpg'), pos: '20% 40%' },
+      { text: ['Décision', decision ? decision.message : 'Simplifier.', decision ? decision.date.split('-').reverse().join('.') + ' · ' + decision.time : ''] },
+      { img: cap('mobile-home-full.jpg'), pos: '50% 22%' },
+      { text: ['Notre ambition', 'Utiles · Innovants · Accessibles', 'produits numériques'], accent: true },
+      { img: cap('mobile-home-full.jpg'), pos: '50% 60%' },
+      { text: ['Écosystème', 'Des solutions numériques en construction.', 'en développement'] }
     ];
     const R = rng(5);
     const tiles = tilesDef.map((d, i) => {
@@ -49,7 +52,7 @@ export default {
       } else {
         n.style.padding = '28px'; n.style.display = 'flex'; n.style.flexDirection = 'column'; n.style.justifyContent = 'space-between';
         n.innerHTML = `<div class="kicker" style="font-size:16px;letter-spacing:0.18em;color:${BRAND.blue}">${d.text[0]}</div>
-          <div style="font-size:${d.big ? 110 : 34}px;font-weight:800;letter-spacing:-0.03em;line-height:1.08;color:#fff">${d.text[1]}</div>
+          <div style="font-size:${d.big ? 110 : 34}px;font-weight:800;letter-spacing:-0.03em;line-height:1.08;color:${d.accent ? BRAND.blue : '#fff'}">${d.text[1]}</div>
           <div style="font-size:18px;font-weight:600;color:${BRAND.muted}">${d.text[2]}</div>`;
       }
       return { n, c, r, d: R() };

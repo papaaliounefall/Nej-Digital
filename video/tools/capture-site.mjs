@@ -21,13 +21,12 @@ const SHOTS = [
   { name: 'mobile-home-hero', path: '/', vp: 'mobile', wait: 7000 },
   { name: 'mobile-home-full', path: '/', vp: 'mobile', wait: 7000, fullPage: true },
   { name: 'mobile-apropos', path: '/a-propos/', vp: 'mobile', wait: 1500, fullPage: true },
-  { name: 'mobile-equipe', path: '/equipe/', vp: 'mobile', wait: 1500, fullPage: true },
   { name: 'mobile-projets', path: '/projets/', vp: 'mobile', wait: 1500 },
   { name: 'mobile-services', path: '/services/', vp: 'mobile', wait: 1500, fullPage: true },
   // Desktop (1440×900 @2x) — pour les plans « écran d'ordinateur ».
   { name: 'desktop-home-hero', path: '/', vp: 'desktop', wait: 7000 },
-  { name: 'desktop-apropos', path: '/a-propos/', vp: 'desktop', wait: 1500 },
-  { name: 'desktop-equipe', path: '/equipe/', vp: 'desktop', wait: 1500 }
+  { name: 'desktop-apropos', path: '/a-propos/', vp: 'desktop', wait: 1500 }
+  // (page Équipe volontairement non capturée : la vidéo ne montre pas de portraits individuels)
 ];
 
 const VIEWPORTS = {

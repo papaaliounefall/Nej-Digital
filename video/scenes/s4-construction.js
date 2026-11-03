@@ -1,7 +1,9 @@
 // SCÈNE 4 — LA CONSTRUCTION (37,5 → 55 s)
 // La ligne laissée par la scène 3 devient un sol. On y empile, bloc par bloc, la
-// méthode réelle de NEJ (site : « Notre méthode, en quatre temps »). Puis la vraie
-// équipe (photos et rôles du site). Enfin l'écosystème : le logo au centre, les
+// méthode réelle de NEJ (site : « Notre méthode, en quatre temps »). Puis l'équipe,
+// montrée comme un collectif et non par quelques portraits : l'équipe ne se limite pas
+// aux profils affichés sur le site. Reprend le titre et les métiers de la page Équipe.
+// Enfin l'écosystème : le logo au centre, les
 // domaines d'intervention réels (site : Nos services) et de vraies captures du site.
 // Les produits restent volontairement anonymes : le site a choisi de ne présenter
 // aucun produit tant qu'aucun n'est en ligne (cf. README du site).
@@ -15,11 +17,12 @@ const METHOD = [
   { n: '03', title: 'Construire', sub: 'Développer des produits fiables.', icon: 'hammer' },
   { n: '04', title: 'Transformer', sub: 'Faire évoluer avec les usages.', icon: 'refresh' }
 ];
-const TEAM = [
-  { name: 'Khady Cissé', role: 'Cofondatrice & Présidente', photo: 'public/khady-cisse.webp' },
-  { name: 'Papa Alioune Fall', role: 'Cofondateur & Secrétaire Général', photo: 'public/papa-alioune-fall.webp' },
-  { name: 'Anifa Djité', role: 'Responsable Communication', photo: 'public/anifa-djite.webp' },
-  { name: 'Amadou Sow', role: 'Responsable RH', photo: 'public/amadou-sow.webp' }
+// Page Équipe du site : « Une équipe multidisciplinaire combinant ingénieurs logiciels,
+// designers UX et spécialistes terrain »
+const DISCIPLINES = [
+  { label: 'Ingénieurs logiciels', icon: 'code', row: 1, x: 120 },
+  { label: 'Designers UX', icon: 'layers', row: 3, x: 330 },
+  { label: 'Spécialistes terrain', icon: 'pin', row: 5, x: 180 }
 ];
 const DOMAINS = [
   { label: 'Développement', sub: 'web & mobile', icon: 'code' },
@@ -49,22 +52,27 @@ export default {
       return b;
     });
 
-    // ---------- B. L'équipe (photos réelles du site) ----------
+    // ---------- B. L'équipe : un collectif (pas de portraits individuels) ----------
     const tLbl = el('div', { cls: 'abs kicker', style: { left: '90px', top: '330px', fontSize: '22px', letterSpacing: '0.2em' } }, root);
-    tLbl.innerHTML = "<b>L'équipe</b><span class=\"sep\">/</span>le noyau dirigeant";
-    const CW = 435, PHH = 360, IH = 116;
-    const cards = TEAM.map((m, i) => {
-      const x = 90 + (i % 2) * (CW + 30), y = 380 + Math.floor(i / 2) * (PHH + IH + 24);
-      const c = el('div', { cls: 'abs card', style: { left: x + 'px', top: y + 'px', width: CW + 'px', height: (PHH + IH) + 'px', overflow: 'hidden', boxShadow: '0 30px 70px rgba(0,0,0,0.45)' } }, root);
-      const ph = el('div', { cls: 'abs', style: { left: 0, top: 0, width: '100%', height: PHH + 'px', overflow: 'hidden', background: BRAND.bg } }, c);
-      const im = ctx.img(ctx.repo + m.photo, { cls: 'abs', style: { left: 0, top: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: '50% 18%' } }, ph);
-      el('div', { cls: 'abs', style: { inset: 0, background: `linear-gradient(180deg, rgba(17,24,39,0) 55%, ${BRAND.card} 100%)` } }, ph);
-      const pin = el('div', { cls: 'abs', style: { left: '14px', top: '14px', padding: '6px 12px', background: 'rgba(10,11,14,0.9)', border: `2px solid ${BRAND.border}`, fontSize: '17px', color: '#E2E8F0', display: 'flex', alignItems: 'center', gap: '6px' } }, ph);
-      pin.innerHTML = `${icon('pin', 18, BRAND.blue)} Dakar, Sénégal`;
-      const info = el('div', { cls: 'abs', style: { left: '24px', right: '20px', top: (PHH + 6) + 'px' } }, c);
-      el('div', { text: m.name, style: { fontSize: '33px', fontWeight: 800, color: '#fff', letterSpacing: '-0.01em' } }, info);
-      el('div', { text: m.role, style: { fontSize: '17px', fontWeight: 700, color: BRAND.blue, textTransform: 'uppercase', letterSpacing: '0.06em', marginTop: '6px' } }, info);
-      return { c, im, i };
+    tLbl.innerHTML = "<b>L'équipe</b><span class=\"sep\">/</span>multidisciplinaire";
+    const tTitle = el('div', { cls: 'abs title', style: { left: '90px', top: '380px', width: '940px', fontSize: '72px', lineHeight: 1.08, whiteSpace: 'nowrap' } }, root);
+    tTitle.innerHTML = `Derrière la technologie,<br/><span style="color:${BRAND.blue}">des personnes.</span>`;
+    // Champ de carrés (motif du logo) : sans bord visible, il ne suggère aucun effectif précis.
+    const GCOLS = 11, GROWS = 8, CELL = 62, GG = 22;
+    const gridW = GCOLS * CELL + (GCOLS - 1) * GG, gridH = GROWS * CELL + (GROWS - 1) * GG;
+    const field = el('div', { cls: 'abs', style: { left: ((W - gridW) / 2) + 'px', top: '600px', width: gridW + 'px', height: gridH + 'px',
+      WebkitMaskImage: 'radial-gradient(ellipse 58% 60% at 50% 50%, #000 45%, transparent 100%)', maskImage: 'radial-gradient(ellipse 58% 60% at 50% 50%, #000 45%, transparent 100%)' } }, root);
+    const RG = rng(23);
+    const people = [];
+    for (let r = 0; r < GROWS; r++) for (let c = 0; c < GCOLS; c++) {
+      const n = el('div', { cls: 'abs', style: { left: c * (CELL + GG) + 'px', top: r * (CELL + GG) + 'px', width: CELL + 'px', height: CELL + 'px', border: `2px solid ${BRAND.border}`, background: BRAND.card } }, field);
+      const d = Math.hypot(c - (GCOLS - 1) / 2, (r - (GROWS - 1) / 2) * 1.2);
+      people.push({ n, r, c, d, lit: RG() < 0.28, ph: RG() * 6.28, sp: 0.6 + RG() * 0.9 });
+    }
+    const pills = DISCIPLINES.map(dd => {
+      const p = el('div', { cls: 'abs card', style: { left: dd.x + 'px', top: (600 + dd.row * (CELL + GG) - 10) + 'px', padding: '16px 24px', display: 'flex', alignItems: 'center', gap: '14px', whiteSpace: 'nowrap', background: 'rgba(10,11,14,0.94)', borderColor: BRAND.blue, boxShadow: '0 20px 60px rgba(0,0,0,0.6)' } }, root);
+      p.innerHTML = `${icon(dd.icon, 32, BRAND.blue)}<span style="font-size:34px;font-weight:800;color:#fff;letter-spacing:-0.01em">${dd.label}</span>`;
+      return { p, ...dd };
     });
 
     // ---------- C. Écosystème ----------
@@ -73,7 +81,7 @@ export default {
     // captures réelles du site, en profondeur (parallaxe)
     const shots = [
       { src: 'desktop-home-hero.jpg', x: -120, y: 300, w: 760, r: -8, z: 0.5 },
-      { src: 'desktop-equipe.jpg', x: 520, y: 1000, w: 700, r: 7, z: 0.7 },
+      { src: 'desktop-apropos.jpg', x: 520, y: 1000, w: 700, r: 7, z: 0.7 },
       { src: 'mobile-apropos.jpg', x: 690, y: 250, w: 330, r: 6, z: 0.35, crop: 1400 },
       { src: 'mobile-projets.jpg', x: -40, y: 1010, w: 330, r: -6, z: 0.6, crop: 1500 }
     ].map(s => {
@@ -127,13 +135,28 @@ export default {
 
         // B. Équipe
         const bOut = ep(t, tE - 0.4, tE + 0.15, ease.inCubic);
-        put(tLbl, { o: ep(t, tT, tT + 0.4) * (1 - bOut) });
-        cards.forEach(({ c, im, i }) => {
-          const a = tT + 0.08 + i * 0.16;
-          const p = ep(t, a, a + 0.7, ease.outExpo);
-          const drift = (t - tT) * (i % 2 ? -5 : 5);
-          put(c, { o: p * (1 - bOut), y: 120 * (1 - p) + drift - bOut * 80, s: (0.92 + 0.08 * p) * (1 - 0.1 * bOut), blur: 10 * bOut });
-          im.style.transform = `scale(${(1.12 - 0.08 * prog(t, tT, tE)).toFixed(4)})`;
+        put(tLbl, { o: ep(t, tT + 0.15, tT + 0.55) * (1 - bOut) });
+        const ti = ep(t, tT + 0.15, tT + 0.8, ease.outExpo);
+        put(tTitle, { o: ti * (1 - bOut), y: 40 * (1 - ti) - 40 * bOut, blur: 8 * (1 - ti) + 10 * bOut });
+        const pIn = (a) => ep(t, a, a + 0.5, ease.outExpo);
+        put(field, { o: 1 - bOut, s: 1 + 0.05 * prog(t, tT, tE), blur: 10 * bOut });
+        people.forEach(pp => {
+          const a = tT + 0.15 + pp.d * 0.09;                      // vague depuis le centre
+          const p = pIn(a);
+          // les métiers allument « leur » rangée au moment où ils apparaissent
+          let hl = 0;
+          pills.forEach((pl, k) => { if (Math.abs(pp.r - pl.row) <= 0) hl = Math.max(hl, inOut(t, tT + 0.9 + k * 0.55, tT + 0.9 + k * 0.55 + 1.3, 0.2, 0.8)); });
+          const glow = pp.lit ? 0.55 + 0.45 * Math.sin((t - tT) * pp.sp * 2.2 + pp.ph) ** 2 : 0;
+          const lv = Math.max(hl * 0.9, glow * p);
+          pp.n.style.background = lv > 0.02 ? `rgba(0,125,254,${(0.15 + 0.75 * lv).toFixed(3)})` : BRAND.card;
+          pp.n.style.borderColor = lv > 0.02 ? `rgba(90,162,255,${(0.3 + 0.6 * lv).toFixed(3)})` : BRAND.border;
+          pp.n.style.boxShadow = lv > 0.3 ? `0 0 ${(30 * lv).toFixed(0)}px rgba(0,125,254,${(0.5 * lv).toFixed(2)})` : 'none';
+          put(pp.n, { o: p, s: 0.4 + 0.6 * p });
+        });
+        pills.forEach((pl, k) => {
+          const a = tT + 0.9 + k * 0.55;
+          const p = pIn(a);
+          put(pl.p, { o: p * (1 - bOut), x: -60 * (1 - p), blur: 8 * bOut });
         });
 
         // C. Écosystème
